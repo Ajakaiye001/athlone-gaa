@@ -363,7 +363,11 @@
                           'div',
                           { className: 'pv-sizes' },
                           sizes.toArray().map(function (s, j) {
-                            return h('span', { key: j }, typeof s === 'string' ? s : s.get ? s.get('size') : String(s))
+                            var label = ''
+                            if (typeof s === 'string') label = s
+                            else if (s && typeof s.get === 'function') label = s.get('size') || ''
+                            else if (s != null) label = String(s)
+                            return h('span', { key: j }, label || '·')
                           }),
                         )
                       : null,

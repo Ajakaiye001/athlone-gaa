@@ -1,15 +1,20 @@
 {
   "items": [
     {
-      "id": "home-jersey",
-      "name": "Home Jersey 2026",
-      "price": 65,
-      "category": "jerseys",
       "art": "jersey",
       "badge": "NEW SEASON",
+      "price": 65,
+      "name": "Home Jersey 2026",
+      "featured": true,
       "desc": "Navy and chalk hoops, embroidered crest. The one worn on county final day.",
-      "options": ["S", "M", "L", "XL"],
-      "featured": true
+      "id": "home-jersey",
+      "category": "jerseys",
+      "options": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ]
     },
     {
       "id": "away-jersey",
@@ -18,7 +23,12 @@
       "category": "jerseys",
       "art": "jersey-away",
       "desc": "Chalk white with a navy chest band. For the days the colours clash.",
-      "options": ["S", "M", "L", "XL"]
+      "options": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ]
     },
     {
       "id": "kids-jersey",
@@ -27,7 +37,13 @@
       "category": "jerseys",
       "art": "jersey",
       "desc": "Same crest, smaller sizes. Future captains start here.",
-      "options": ["4-5", "6-7", "8-9", "10-11", "12-13"]
+      "options": [
+        "4-5",
+        "6-7",
+        "8-9",
+        "10-11",
+        "12-13"
+      ]
     },
     {
       "id": "match-football",
@@ -62,7 +78,12 @@
       "art": "hurley",
       "badge": "HAND MADE",
       "desc": "Irish ash, hand-shaped bás, balanced for striking off both sides.",
-      "options": ["30\"", "32\"", "34\"", "36\""]
+      "options": [
+        "30\"",
+        "32\"",
+        "34\"",
+        "36\""
+      ]
     },
     {
       "id": "first-hurley",
@@ -71,7 +92,11 @@
       "category": "hurleys",
       "art": "hurley",
       "desc": "Lighter ash for small hands learning the swing. Sized for ages 5 to 10.",
-      "options": ["20\"", "24\"", "26\""]
+      "options": [
+        "20\"",
+        "24\"",
+        "26\""
+      ]
     },
     {
       "id": "hurley-grip-bundle",
@@ -80,6 +105,19 @@
       "category": "hurleys",
       "art": "hurley",
       "desc": "A 34 inch ash hurley wrapped with a club-colours grip, ready for the wall."
+    },
+    {
+      "name": "Kid's jersey",
+      "price": 20,
+      "category": "jerseys",
+      "art": "jersey",
+      "desc": "For your kid",
+      "options": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ]
     }
   ]
 }
