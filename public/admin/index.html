@@ -5,8 +5,425 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="robots" content="noindex" />
     <title>Athlone GAA · Content Manager</title>
+    <link rel="icon" type="image/png" href="/assets/imgImage232.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;600;700;800&family=Spline+Sans+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* ---- Athlone GAA admin shell theme (outer app, not the preview iframe) ---- */
+      :root {
+        --agaa-pitch: #1c4029;
+        --agaa-pitch-deep: #12281a;
+        --agaa-navy: #101c33;
+        --agaa-paper: #f1efe6;
+        --agaa-leather: #cf9445;
+        --agaa-ink: #22302a;
+      }
+
+      body {
+        background: var(--agaa-paper) !important;
+        font-family: 'Archivo', system-ui, sans-serif !important;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      /* top app bar */
+      header[class*='AppHeader'],
+      [class*='AppHeaderContainer'] {
+        background: var(--agaa-pitch-deep) !important;
+        border-bottom: 3px solid var(--agaa-leather) !important;
+      }
+
+      header[class*='AppHeader'] a,
+      header[class*='AppHeader'] button,
+      header[class*='AppHeader'] div {
+        color: #f3f6ef;
+      }
+
+      /* primary action buttons (Publish, Save, New, Login) */
+      button[class*='ToolbarButton'],
+      button[class*='StyledDropdownButton'],
+      button[class*='PublishButton'],
+      button[class*='SaveButton'],
+      [class*='CardButton'] {
+        border-radius: 0 !important;
+        font-family: 'Spline Sans Mono', monospace !important;
+        font-weight: 700 !important;
+        letter-spacing: 0.08em !important;
+        text-transform: uppercase !important;
+      }
+
+      /* login screen */
+      section[class*='AuthenticationPage'],
+      div[class*='AuthenticationPage'] {
+        background: var(--agaa-pitch-deep) !important;
+      }
+
+      section[class*='AuthenticationPage'] button,
+      div[class*='AuthenticationPage'] button {
+        background: var(--agaa-leather) !important;
+        color: var(--agaa-navy) !important;
+        border-radius: 0 !important;
+        font-family: 'Spline Sans Mono', monospace !important;
+        font-weight: 700 !important;
+        letter-spacing: 0.12em !important;
+        text-transform: uppercase !important;
+        padding: 14px 28px !important;
+        box-shadow: 5px 5px 0 0 rgba(0, 0, 0, 0.45) !important;
+      }
+
+      /* sidebar */
+      [class*='SidebarContainer'],
+      aside[class*='Sidebar'] {
+        background: #fbfaf5 !important;
+        border-radius: 0 !important;
+        border: 2px solid var(--agaa-ink) !important;
+      }
+
+      [class*='SidebarNavLink'] {
+        font-family: 'Spline Sans Mono', monospace !important;
+        text-transform: uppercase !important;
+        letter-spacing: 0.06em !important;
+        font-size: 13px !important;
+      }
+
+      /* cards / list entries */
+      [class*='ListCard'],
+      [class*='FileListCard'],
+      li[class*='ListItem'] {
+        border-radius: 0 !important;
+      }
+
+      /* scrollbars, subtle */
+      ::-webkit-scrollbar {
+        width: 10px;
+        height: 10px;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #b9b4a2;
+      }
+      ::-webkit-scrollbar-track {
+        background: transparent;
+      }
+    </style>
   </head>
   <body>
     <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+    <script>
+      /* =====================================================================
+         Live previews styled like the real site, so editors see what the
+         parish sees: news rows, product tiles and scoreboard slabs.
+         ===================================================================== */
+
+      CMS.registerPreviewStyle(
+        `
+        @import url('https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;600;700;800&family=Spline+Sans+Mono:wght@400;700&display=swap');
+
+        :root {
+          --pitch: #1c4029;
+          --pitch-deep: #12281a;
+          --navy: #101c33;
+          --navy-deep: #0b1526;
+          --paper: #f1efe6;
+          --chalk: #f3f6ef;
+          --chalk-dim: rgba(243, 246, 239, 0.55);
+          --leather: #cf9445;
+          --ink: #22302a;
+          --ink-soft: #55635c;
+        }
+
+        body {
+          background: var(--paper);
+          font-family: 'Archivo', system-ui, sans-serif;
+          margin: 0;
+          padding: 24px;
+          -webkit-font-smoothing: antialiased;
+        }
+
+        .pv-banner {
+          font-family: 'Spline Sans Mono', monospace;
+          font-size: 11px;
+          font-weight: 700;
+          letter-spacing: 0.18em;
+          text-transform: uppercase;
+          color: var(--ink-soft);
+          border-bottom: 3px solid var(--ink);
+          padding-bottom: 10px;
+          margin-bottom: 22px;
+        }
+        .pv-banner b { color: var(--leather); }
+
+        /* --- news --- */
+        .pv-news {
+          display: grid;
+          grid-template-columns: 120px 1fr;
+          gap: 18px;
+          padding: 16px 0;
+          border-bottom: 1px solid rgba(34, 48, 42, 0.25);
+          align-items: start;
+        }
+        .pv-news img {
+          width: 120px;
+          height: 84px;
+          object-fit: cover;
+          border: 2px solid var(--ink);
+          background: var(--pitch);
+        }
+        .pv-news-noimg {
+          width: 120px; height: 84px;
+          border: 2px dashed rgba(34,48,42,.35);
+          display: grid; place-items: center;
+          font-family: 'Spline Sans Mono', monospace;
+          font-size: 10px; color: var(--ink-soft);
+        }
+        .pv-meta {
+          font-family: 'Spline Sans Mono', monospace;
+          font-size: 11px;
+          font-weight: 700;
+          letter-spacing: 0.14em;
+          text-transform: uppercase;
+          color: var(--pitch);
+          margin: 0 0 6px;
+        }
+        .pv-meta span { color: var(--ink-soft); font-weight: 400; }
+        .pv-news h3 {
+          font-family: 'Archivo', sans-serif;
+          font-weight: 800;
+          font-size: 17px;
+          line-height: 1.25;
+          text-transform: uppercase;
+          margin: 0 0 6px;
+          color: var(--ink);
+        }
+        .pv-news p { font-size: 13px; line-height: 1.55; color: var(--ink-soft); margin: 0; }
+
+        /* --- shop --- */
+        .pv-shop {
+          display: grid;
+          grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+          gap: 16px;
+        }
+        .pv-product { border: 3px solid var(--ink); background: #fbfaf5; position: relative; }
+        .pv-product-canvas {
+          height: 92px;
+          display: grid;
+          place-items: center;
+          font-family: 'Anton', sans-serif;
+          font-size: 30px;
+          letter-spacing: 0.02em;
+          color: var(--chalk);
+        }
+        .pv-product-canvas.jerseys { background: var(--navy); }
+        .pv-product-canvas.balls { background: var(--leather); color: var(--navy-deep); }
+        .pv-product-canvas.hurleys { background: var(--pitch); }
+        .pv-badge {
+          position: absolute; top: 10px; right: -3px;
+          background: var(--leather); color: var(--navy-deep);
+          font-family: 'Spline Sans Mono', monospace;
+          font-size: 9px; font-weight: 700; letter-spacing: 0.14em;
+          padding: 4px 8px;
+        }
+        .pv-product-body { padding: 12px; }
+        .pv-product-body h3 {
+          font-family: 'Anton', sans-serif;
+          font-weight: 400;
+          font-size: 16px;
+          text-transform: uppercase;
+          margin: 0 0 6px;
+          color: var(--ink);
+        }
+        .pv-product-body p { font-size: 12px; line-height: 1.5; color: var(--ink-soft); margin: 0 0 8px; }
+        .pv-sizes { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 8px; }
+        .pv-sizes span {
+          font-family: 'Spline Sans Mono', monospace;
+          font-size: 10px; padding: 3px 7px;
+          border: 1px solid rgba(34,48,42,.4); color: var(--ink-soft);
+        }
+        .pv-price {
+          font-family: 'Spline Sans Mono', monospace;
+          font-weight: 700; font-size: 16px; color: var(--ink);
+        }
+        .pv-featured {
+          font-family: 'Spline Sans Mono', monospace;
+          font-size: 9px; font-weight: 700; letter-spacing: .14em;
+          color: var(--pitch); display: block; margin-top: 6px;
+        }
+
+        /* --- fixtures --- */
+        .pv-board { background: var(--navy); padding: 18px; }
+        .pv-game { border: 2px solid rgba(243,246,239,.22); margin-bottom: 14px; }
+        .pv-game-meta {
+          display: flex; justify-content: space-between; gap: 12px;
+          padding: 9px 14px;
+          border-bottom: 1px solid rgba(243,246,239,.15);
+          font-family: 'Spline Sans Mono', monospace;
+          font-size: 10px; font-weight: 700; letter-spacing: .14em;
+          text-transform: uppercase;
+        }
+        .pv-game-meta i { color: var(--leather); font-style: normal; }
+        .pv-game-meta em { color: var(--chalk-dim); font-style: normal; font-weight: 400; }
+        .pv-game-line {
+          display: grid; grid-template-columns: 1fr auto 1fr;
+          align-items: center; gap: 10px; padding: 14px;
+        }
+        .pv-team {
+          font-family: 'Anton', sans-serif; font-size: 16px;
+          text-transform: uppercase; color: var(--chalk);
+        }
+        .pv-team.away { text-align: right; }
+        .pv-score {
+          font-family: 'Spline Sans Mono', monospace;
+          font-weight: 700; font-size: 17px; color: var(--chalk);
+          white-space: nowrap;
+        }
+        .pv-score i { color: var(--leather); font-style: normal; }
+        .pv-score.next { color: var(--leather); font-size: 13px; }
+        .pv-game-foot {
+          display: flex; justify-content: space-between; gap: 10px;
+          padding: 8px 14px;
+          border-top: 1px solid rgba(243,246,239,.15);
+          font-family: 'Spline Sans Mono', monospace;
+          font-size: 9px; letter-spacing: .12em; text-transform: uppercase;
+          color: var(--chalk-dim);
+        }
+        `,
+        { raw: true },
+      )
+
+      var Banner = function (label) {
+        return h('p', { className: 'pv-banner' }, ['LIVE PREVIEW · AS THE PARISH SEES IT · ', h('b', { key: 'b' }, label)])
+      }
+
+      /* ---------- News preview ---------- */
+      var NewsPreview = createClass({
+        render: function () {
+          var entry = this.props.entry
+          var getAsset = this.props.getAsset
+          var items = entry.getIn(['data', 'items'])
+          var list = items ? items.toArray() : []
+          return h(
+            'div',
+            {},
+            Banner('NEWS PAGE'),
+            list.map(function (item, i) {
+              var img = item.get('image')
+              return h(
+                'article',
+                { className: 'pv-news', key: i },
+                img
+                  ? h('img', { src: getAsset(img).toString() })
+                  : h('div', { className: 'pv-news-noimg' }, 'NO PHOTO'),
+                h(
+                  'div',
+                  {},
+                  h('p', { className: 'pv-meta' }, [
+                    (item.get('category') || 'CATEGORY') + ' ',
+                    h('span', { key: 's' }, '· ' + (item.get('date') || 'DATE')),
+                  ]),
+                  h('h3', {}, item.get('title') || 'Headline goes here'),
+                  h('p', {}, item.get('excerpt') || ''),
+                ),
+              )
+            }),
+          )
+        },
+      })
+
+      /* ---------- Shop preview ---------- */
+      var ART_GLYPH = { jersey: '👕', 'jersey-away': '👕', football: '🏐', sliotar: '🥎', hurley: '🏑' }
+
+      var ShopPreview = createClass({
+        render: function () {
+          var items = this.props.entry.getIn(['data', 'items'])
+          var list = items ? items.toArray() : []
+          return h(
+            'div',
+            {},
+            Banner('CLUB SHOP'),
+            h(
+              'div',
+              { className: 'pv-shop' },
+              list.map(function (p, i) {
+                var cat = p.get('category') || 'jerseys'
+                var sizes = p.get('options')
+                return h(
+                  'div',
+                  { className: 'pv-product', key: i },
+                  p.get('badge') ? h('span', { className: 'pv-badge' }, p.get('badge')) : null,
+                  h('div', { className: 'pv-product-canvas ' + cat }, ART_GLYPH[p.get('art')] || '·'),
+                  h(
+                    'div',
+                    { className: 'pv-product-body' },
+                    h('h3', {}, p.get('name') || 'Product name'),
+                    h('p', {}, p.get('desc') || ''),
+                    sizes && sizes.size
+                      ? h(
+                          'div',
+                          { className: 'pv-sizes' },
+                          sizes.toArray().map(function (s, j) {
+                            return h('span', { key: j }, typeof s === 'string' ? s : s.get ? s.get('size') : String(s))
+                          }),
+                        )
+                      : null,
+                    h('span', { className: 'pv-price' }, '€' + (p.get('price') != null ? p.get('price') : '—')),
+                    p.get('featured') ? h('span', { className: 'pv-featured' }, '★ FEATURED PRODUCT') : null,
+                  ),
+                )
+              }),
+            ),
+          )
+        },
+      })
+
+      /* ---------- Fixtures preview ---------- */
+      var FixturesPreview = createClass({
+        render: function () {
+          var items = this.props.entry.getIn(['data', 'items'])
+          var list = items ? items.toArray() : []
+          return h(
+            'div',
+            {},
+            Banner('THE SCOREBOARD'),
+            h(
+              'div',
+              { className: 'pv-board' },
+              list.map(function (f, i) {
+                var played = !!f.get('played')
+                return h(
+                  'div',
+                  { className: 'pv-game', key: i },
+                  h('div', { className: 'pv-game-meta' }, [
+                    h('i', { key: 'd' }, f.get('date') || 'MATCH DAY'),
+                    h('em', { key: 'c' }, f.get('competition') || 'Competition'),
+                  ]),
+                  h('div', { className: 'pv-game-line' }, [
+                    h('span', { className: 'pv-team', key: 'h' }, 'Athlone'),
+                    played
+                      ? h('span', { className: 'pv-score', key: 's' }, [
+                          f.get('homeScore') || '·',
+                          h('i', { key: 'sep' }, ' : '),
+                          f.get('awayScore') || '·',
+                        ])
+                      : h('span', { className: 'pv-score next', key: 's' }, '● ' + (f.get('throwIn') || 'TBC')),
+                    h('span', { className: 'pv-team away', key: 'a' }, 'Roscommon'),
+                  ]),
+                  h('div', { className: 'pv-game-foot' }, [
+                    h('span', { key: 'v' }, f.get('venue') || 'Venue'),
+                    h('span', { key: 'r' }, 'REF · ' + (f.get('referee') || 'TBC')),
+                    h('span', { key: 'st' }, played ? 'FULL TIME' : 'UPCOMING'),
+                  ]),
+                )
+              }),
+            ),
+          )
+        },
+      })
+
+      CMS.registerPreviewTemplate('news', NewsPreview)
+      CMS.registerPreviewTemplate('shop', ShopPreview)
+      CMS.registerPreviewTemplate('fixtures', FixturesPreview)
+    </script>
   </body>
 </html>

@@ -9,6 +9,8 @@ backend:
 # Lets decap-server proxy edits straight into the local git repo during development
 local_backend: true
 
+logo_url: /assets/imgImage232.png
+
 media_folder: 'public/uploads'
 public_folder: '/uploads'
 
@@ -16,39 +18,46 @@ site_url: /
 display_url: /
 
 collections:
-  - name: 'club-content'
-    label: 'Club Content'
+  - name: 'news'
+    label: 'News'
+    description: 'Match reports and club notes. The first item is the featured story on the News page.'
     files:
       - name: 'news'
-        label: 'News'
+        label: 'News items'
         file: 'public/content/news.json'
-        description: 'Match reports and club notes shown on the News page'
         fields:
           - name: 'items'
             label: 'News items'
             label_singular: 'news item'
             widget: 'list'
-            summary: '{{fields.title}}'
+            collapsed: true
+            minimize_collapsed: true
+            summary: '{{fields.title}} — {{fields.date}}'
             fields:
               - { name: 'title', label: 'Headline', widget: 'string' }
-              - { name: 'date', label: 'Date', widget: 'string', hint: 'e.g. 02 March 2026' }
+              - { name: 'date', label: 'Date', widget: 'string', hint: 'Written out, e.g. 02 March 2026' }
               - name: 'category'
                 label: 'Category'
                 widget: 'select'
                 options: ['Match Report', 'Club News', 'Team News', 'Fundraising']
               - { name: 'image', label: 'Photo', widget: 'image', required: false }
-              - { name: 'excerpt', label: 'Summary', widget: 'text' }
+              - { name: 'excerpt', label: 'Summary', widget: 'text', hint: 'One or two sentences shown under the headline' }
 
+  - name: 'shop'
+    label: 'Shop'
+    description: 'Products in the club shop. Mark exactly one product as featured for the big banner.'
+    files:
       - name: 'shop'
-        label: 'Shop'
+        label: 'Products'
         file: 'public/content/shop.json'
-        description: 'Products sold in the club shop'
         fields:
           - name: 'items'
             label: 'Products'
             label_singular: 'product'
             widget: 'list'
-            summary: '{{fields.name}} · €{{fields.price}}'
+            collapsed: true
+            minimize_collapsed: true
+            summary: '{{fields.name}} — €{{fields.price}}'
             fields:
               - { name: 'id', label: 'Product code', widget: 'string', required: false, hint: 'Leave blank to auto-generate from the name' }
               - { name: 'name', label: 'Name', widget: 'string' }
@@ -63,37 +72,44 @@ collections:
               - name: 'art'
                 label: 'Chalk drawing'
                 widget: 'select'
+                hint: 'The line drawing shown on the product tile'
                 options:
                   - { label: 'Jersey (hoops)', value: 'jersey' }
                   - { label: 'Jersey (chest band)', value: 'jersey-away' }
                   - { label: 'Football', value: 'football' }
                   - { label: 'Sliotar', value: 'sliotar' }
                   - { label: 'Hurley', value: 'hurley' }
-              - { name: 'badge', label: 'Corner badge', widget: 'string', required: false, hint: 'e.g. NEW SEASON, HAND MADE' }
+              - { name: 'badge', label: 'Corner badge', widget: 'string', required: false, hint: 'Short label like NEW SEASON or HAND MADE' }
               - { name: 'desc', label: 'Description', widget: 'text' }
               - name: 'options'
                 label: 'Sizes'
                 widget: 'list'
                 required: false
+                hint: 'One size per row, e.g. S, M, L or 30", 32"'
                 field: { name: 'size', label: 'Size', widget: 'string' }
-              - { name: 'featured', label: 'Featured product', widget: 'boolean', required: false, hint: 'Only one product should be featured' }
+              - { name: 'featured', label: 'Featured product', widget: 'boolean', required: false }
 
+  - name: 'fixtures'
+    label: 'Fixtures & Results'
+    description: 'The scoreboard. Tick "Played" and fill in the scores when the final whistle goes.'
+    files:
       - name: 'fixtures'
-        label: 'Fixtures & Results'
+        label: 'Games'
         file: 'public/content/fixtures.json'
-        description: 'The scoreboard: every game of the season'
         fields:
           - name: 'items'
             label: 'Games'
             label_singular: 'game'
             widget: 'list'
-            summary: '{{fields.date}} · {{fields.competition}}'
+            collapsed: true
+            minimize_collapsed: true
+            summary: '{{fields.date}} — {{fields.competition}}'
             fields:
               - name: 'month'
                 label: 'Month'
                 widget: 'select'
                 options: ['January', 'February', 'March', 'April', 'May', 'June', 'July']
-              - { name: 'date', label: 'Match day', widget: 'string', hint: 'e.g. SUNDAY 01 MARCH' }
+              - { name: 'date', label: 'Match day', widget: 'string', hint: 'All caps, e.g. SUNDAY 01 MARCH' }
               - { name: 'competition', label: 'Competition', widget: 'string' }
               - name: 'code'
                 label: 'Code'
@@ -102,7 +118,7 @@ collections:
                   - { label: 'Football', value: 'football' }
                   - { label: 'Hurling', value: 'hurling' }
               - { name: 'played', label: 'Played (full time)', widget: 'boolean', default: false }
-              - { name: 'homeScore', label: 'Athlone score', widget: 'string', required: false, hint: 'e.g. 0-17. Leave blank for upcoming games' }
+              - { name: 'homeScore', label: 'Athlone score', widget: 'string', required: false, hint: 'Goals-points, e.g. 0-17. Leave blank for upcoming games' }
               - { name: 'awayScore', label: 'Opposition score', widget: 'string', required: false }
               - { name: 'throwIn', label: 'Throw-in time', widget: 'string', required: false, hint: 'For upcoming games, e.g. 2:00 PM' }
               - { name: 'venue', label: 'Venue', widget: 'string' }
