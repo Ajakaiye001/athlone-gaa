@@ -428,6 +428,32 @@
       CMS.registerPreviewTemplate('news', NewsPreview)
       CMS.registerPreviewTemplate('shop', ShopPreview)
       CMS.registerPreviewTemplate('fixtures', FixturesPreview)
+
+      /* =====================================================================
+         When an editor clicks "Add news item / product / game / size",
+         scroll the freshly added row into view and put the cursor in its
+         first field, so they never have to hunt for it.
+         ===================================================================== */
+      document.addEventListener('click', function (e) {
+        var btn = e.target.closest && e.target.closest('button')
+        if (!btn || !/^add\s/i.test(btn.textContent.trim())) return
+        var widget = btn.closest('[class*="Widget"], [class*="FieldsBox"], form') || document
+        setTimeout(function () {
+          // the new row is the first (add_to_top) object item in this widget
+          var inputs = widget.querySelectorAll('input[type="text"], input:not([type]), textarea')
+          var target = null
+          for (var i = 0; i < inputs.length; i++) {
+            if (!inputs[i].value) {
+              target = inputs[i]
+              break
+            }
+          }
+          if (target) {
+            target.scrollIntoView({ behavior: 'smooth', block: 'center' })
+            target.focus({ preventScroll: true })
+          }
+        }, 350)
+      })
     </script>
   </body>
 </html>

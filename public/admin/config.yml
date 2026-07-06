@@ -9,6 +9,10 @@ backend:
 # Lets decap-server proxy edits straight into the local git repo during development
 local_backend: true
 
+# Save first, publish second: edits become drafts on the Workflow board
+# and only go live when published from there.
+publish_mode: editorial_workflow
+
 logo_url: /assets/imgImage232.png
 
 media_folder: 'public/uploads'
@@ -32,6 +36,7 @@ collections:
             widget: 'list'
             collapsed: true
             minimize_collapsed: true
+            add_to_top: true
             summary: '{{fields.title}} — {{fields.date}}'
             fields:
               - { name: 'title', label: 'Headline', widget: 'string' }
@@ -57,6 +62,7 @@ collections:
             widget: 'list'
             collapsed: true
             minimize_collapsed: true
+            add_to_top: true
             summary: '{{fields.name}} — €{{fields.price}}'
             fields:
               - { name: 'id', label: 'Product code', widget: 'string', required: false, hint: 'Leave blank to auto-generate from the name' }
@@ -103,6 +109,7 @@ collections:
             widget: 'list'
             collapsed: true
             minimize_collapsed: true
+            add_to_top: true
             summary: '{{fields.date}} — {{fields.competition}}'
             fields:
               - name: 'month'
