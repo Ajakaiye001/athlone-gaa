@@ -1,0 +1,105 @@
+.footer {
+  background: var(--pitch-deep);
+  color: var(--chalk);
+  padding-top: clamp(56px, 7vw, 96px);
+  overflow: hidden;
+}
+
+.footer-top {
+  display: grid;
+  grid-template-columns: minmax(220px, 1.4fr) repeat(3, minmax(140px, 1fr));
+  gap: clamp(32px, 4vw, 64px);
+}
+
+.footer-crest img {
+  width: 64px;
+  height: 88px;
+  object-fit: contain;
+}
+
+.footer-crest p {
+  margin-top: 16px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  line-height: 1.8;
+  color: var(--chalk-dim);
+}
+
+.footer-col {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer-col h4 {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--leather);
+  margin-bottom: 8px;
+}
+
+.footer-col a {
+  font-weight: 600;
+  font-size: 15px;
+  width: fit-content;
+  position: relative;
+}
+
+.footer-col a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -3px;
+  height: 2px;
+  background: var(--leather);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s var(--ease-out);
+}
+
+.footer-col a:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* the giant terrace chant */
+.footer-wordmark {
+  font-size: clamp(5rem, 19vw, 19rem);
+  line-height: 0.85;
+  text-align: center;
+  color: oklch(0.97 0.006 130 / 0.08);
+  margin-top: clamp(40px, 6vw, 80px);
+  white-space: nowrap;
+  user-select: none;
+}
+
+.footer-legal {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  padding-block: 22px;
+  border-top: 1px solid oklch(0.97 0.006 130 / 0.15);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  color: var(--chalk-dim);
+}
+
+@media (max-width: 900px) {
+  .footer-top {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 520px) {
+  .footer-top {
+    grid-template-columns: 1fr;
+  }
+}

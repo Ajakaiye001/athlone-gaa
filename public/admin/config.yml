@@ -1,0 +1,109 @@
+# Decap CMS content model for Athlone GAA.
+# Local editing: run `npm run cms` next to `npm run dev`, open /admin/index.html.
+# Production: host on Netlify + enable Identity/Git Gateway, or switch backend to `github`.
+
+backend:
+  name: git-gateway
+  branch: master
+
+# Lets decap-server proxy edits straight into the local git repo during development
+local_backend: true
+
+media_folder: 'public/uploads'
+public_folder: '/uploads'
+
+site_url: /
+display_url: /
+
+collections:
+  - name: 'club-content'
+    label: 'Club Content'
+    files:
+      - name: 'news'
+        label: 'News'
+        file: 'public/content/news.json'
+        description: 'Match reports and club notes shown on the News page'
+        fields:
+          - name: 'items'
+            label: 'News items'
+            label_singular: 'news item'
+            widget: 'list'
+            summary: '{{fields.title}}'
+            fields:
+              - { name: 'title', label: 'Headline', widget: 'string' }
+              - { name: 'date', label: 'Date', widget: 'string', hint: 'e.g. 02 March 2026' }
+              - name: 'category'
+                label: 'Category'
+                widget: 'select'
+                options: ['Match Report', 'Club News', 'Team News', 'Fundraising']
+              - { name: 'image', label: 'Photo', widget: 'image', required: false }
+              - { name: 'excerpt', label: 'Summary', widget: 'text' }
+
+      - name: 'shop'
+        label: 'Shop'
+        file: 'public/content/shop.json'
+        description: 'Products sold in the club shop'
+        fields:
+          - name: 'items'
+            label: 'Products'
+            label_singular: 'product'
+            widget: 'list'
+            summary: '{{fields.name}} · €{{fields.price}}'
+            fields:
+              - { name: 'id', label: 'Product code', widget: 'string', required: false, hint: 'Leave blank to auto-generate from the name' }
+              - { name: 'name', label: 'Name', widget: 'string' }
+              - { name: 'price', label: 'Price (€)', widget: 'number', value_type: 'int', min: 0 }
+              - name: 'category'
+                label: 'Category'
+                widget: 'select'
+                options:
+                  - { label: 'Jerseys', value: 'jerseys' }
+                  - { label: 'Balls', value: 'balls' }
+                  - { label: 'Hurleys', value: 'hurleys' }
+              - name: 'art'
+                label: 'Chalk drawing'
+                widget: 'select'
+                options:
+                  - { label: 'Jersey (hoops)', value: 'jersey' }
+                  - { label: 'Jersey (chest band)', value: 'jersey-away' }
+                  - { label: 'Football', value: 'football' }
+                  - { label: 'Sliotar', value: 'sliotar' }
+                  - { label: 'Hurley', value: 'hurley' }
+              - { name: 'badge', label: 'Corner badge', widget: 'string', required: false, hint: 'e.g. NEW SEASON, HAND MADE' }
+              - { name: 'desc', label: 'Description', widget: 'text' }
+              - name: 'options'
+                label: 'Sizes'
+                widget: 'list'
+                required: false
+                field: { name: 'size', label: 'Size', widget: 'string' }
+              - { name: 'featured', label: 'Featured product', widget: 'boolean', required: false, hint: 'Only one product should be featured' }
+
+      - name: 'fixtures'
+        label: 'Fixtures & Results'
+        file: 'public/content/fixtures.json'
+        description: 'The scoreboard: every game of the season'
+        fields:
+          - name: 'items'
+            label: 'Games'
+            label_singular: 'game'
+            widget: 'list'
+            summary: '{{fields.date}} · {{fields.competition}}'
+            fields:
+              - name: 'month'
+                label: 'Month'
+                widget: 'select'
+                options: ['January', 'February', 'March', 'April', 'May', 'June', 'July']
+              - { name: 'date', label: 'Match day', widget: 'string', hint: 'e.g. SUNDAY 01 MARCH' }
+              - { name: 'competition', label: 'Competition', widget: 'string' }
+              - name: 'code'
+                label: 'Code'
+                widget: 'select'
+                options:
+                  - { label: 'Football', value: 'football' }
+                  - { label: 'Hurling', value: 'hurling' }
+              - { name: 'played', label: 'Played (full time)', widget: 'boolean', default: false }
+              - { name: 'homeScore', label: 'Athlone score', widget: 'string', required: false, hint: 'e.g. 0-17. Leave blank for upcoming games' }
+              - { name: 'awayScore', label: 'Opposition score', widget: 'string', required: false }
+              - { name: 'throwIn', label: 'Throw-in time', widget: 'string', required: false, hint: 'For upcoming games, e.g. 2:00 PM' }
+              - { name: 'venue', label: 'Venue', widget: 'string' }
+              - { name: 'referee', label: 'Referee', widget: 'string', default: 'TBC' }

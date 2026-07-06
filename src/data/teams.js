@@ -1,0 +1,207 @@
+export const coaches = [
+  {
+    name: 'Peter Scott',
+    role: 'Senior Team Coach',
+    image: '/assets/imgFrame1618868199.jpg',
+  },
+  {
+    name: 'Michael Walsh',
+    role: 'Junior Team Coach',
+    image: '/assets/imgFrame1618868200.jpg',
+  },
+  {
+    name: 'Sarah O’Connor',
+    role: 'Ladies Football Coach',
+    image: '/assets/imgFrame1618868201.jpg',
+  },
+  {
+    name: 'Fred O’Neil',
+    role: 'Underage Development Coach',
+    image: '/assets/imgFrame1618868202.jpg',
+  },
+]
+
+export const teams = [
+  {
+    name: 'Senior Football',
+    blurb:
+      'Our flagship men’s side competing in the Allianz Football League Roinn 3 and the senior championship.',
+    image: '/assets/imgFrame1618868199.jpg',
+    coach: 'Peter Scott',
+    roster: [
+      { no: 1, name: 'Dara Kilduff', pos: 'Goalkeeper' },
+      { no: 2, name: 'Cian Ó Braonáin', pos: 'Corner Back' },
+      { no: 3, name: 'Séamus Galvin', pos: 'Full Back', captain: true },
+      { no: 4, name: 'Odhrán Naughton', pos: 'Corner Back' },
+      { no: 5, name: 'Rory Devaney', pos: 'Half Back' },
+      { no: 6, name: 'Tomás Ganly', pos: 'Centre Back' },
+      { no: 7, name: 'Evan Skeffington', pos: 'Half Back' },
+      { no: 8, name: 'Conor Hoare', pos: 'Midfield' },
+      { no: 9, name: 'Pádraig Beades', pos: 'Midfield' },
+      { no: 10, name: 'Jack Killian', pos: 'Half Forward' },
+      { no: 11, name: 'Fionn Dolan', pos: 'Centre Forward' },
+      { no: 12, name: 'Niall Hanniffy', pos: 'Half Forward' },
+      { no: 13, name: 'Cathal Egan', pos: 'Corner Forward' },
+      { no: 14, name: 'Marcus Yaw', pos: 'Full Forward' },
+      { no: 15, name: 'Ben Norton', pos: 'Corner Forward' },
+    ],
+  },
+  {
+    name: 'Senior Hurling',
+    blurb:
+      'Competing in the Allianz Hurling League Roinn 2, our hurlers carry the club’s proud tradition on the field.',
+    image: '/assets/imgFrame1618868206.jpg',
+    coach: 'Peter Scott',
+    roster: [
+      { no: 1, name: 'Oisín Creggy', pos: 'Goalkeeper' },
+      { no: 2, name: 'Lorcán Mannion', pos: 'Corner Back' },
+      { no: 3, name: 'Donncha Flatley', pos: 'Full Back' },
+      { no: 4, name: 'Ruairí Costello', pos: 'Corner Back' },
+      { no: 5, name: 'Aaron Kiernan', pos: 'Wing Back' },
+      { no: 6, name: 'Micheál Grennan', pos: 'Centre Back', captain: true },
+      { no: 7, name: 'Darragh Lohan', pos: 'Wing Back' },
+      { no: 8, name: 'Colm Shine', pos: 'Midfield' },
+      { no: 9, name: 'Eoghan Duffy', pos: 'Midfield' },
+      { no: 10, name: 'Tadhg Moriarty', pos: 'Wing Forward' },
+      { no: 11, name: 'Shane Rattigan', pos: 'Centre Forward' },
+      { no: 12, name: 'Killian Boyd', pos: 'Wing Forward' },
+      { no: 13, name: 'Peter Coyne', pos: 'Corner Forward' },
+      { no: 14, name: 'Liam Bracken', pos: 'Full Forward' },
+      { no: 15, name: 'Senan Whyte', pos: 'Corner Forward' },
+    ],
+  },
+  {
+    name: 'Ladies Football',
+    blurb:
+      'A fast-growing section of the club with squads competing at junior and intermediate level.',
+    image: '/assets/imgFrame1618868201.jpg',
+    coach: 'Sarah O’Connor',
+    roster: [
+      { no: 1, name: 'Aoibhinn Curley', pos: 'Goalkeeper' },
+      { no: 2, name: 'Laoise Brennan', pos: 'Corner Back' },
+      { no: 3, name: 'Emer Fallon', pos: 'Full Back' },
+      { no: 4, name: 'Sadhbh Nolan', pos: 'Corner Back' },
+      { no: 5, name: 'Róisín Gately', pos: 'Half Back' },
+      { no: 6, name: 'Clodagh Mannering', pos: 'Centre Back' },
+      { no: 7, name: 'Niamh Killeen', pos: 'Half Back' },
+      { no: 8, name: 'Órla Dowling', pos: 'Midfield', captain: true },
+      { no: 9, name: 'Kate Geraghty', pos: 'Midfield' },
+      { no: 10, name: 'Muireann Flynn', pos: 'Half Forward' },
+      { no: 11, name: 'Sinéad Corcoran', pos: 'Centre Forward' },
+      { no: 12, name: 'Ella Monaghan', pos: 'Half Forward' },
+      { no: 13, name: 'Aifric Judge', pos: 'Corner Forward' },
+      { no: 14, name: 'Grace Timlin', pos: 'Full Forward' },
+      { no: 15, name: 'Holly Beirne', pos: 'Corner Forward' },
+    ],
+  },
+  {
+    name: 'Junior & Reserves',
+    blurb:
+      'The heartbeat of the club: every adult member gets the chance to play competitive Gaelic games.',
+    image: '/assets/imgFrame1618868200.jpg',
+    coach: 'Michael Walsh',
+    roster: [
+      { no: 1, name: 'Frank Mulvihill', pos: 'Goalkeeper' },
+      { no: 2, name: 'Gearóid Spellman', pos: 'Corner Back' },
+      { no: 3, name: 'Hugh Carberry', pos: 'Full Back' },
+      { no: 4, name: 'Dean Loughnane', pos: 'Corner Back' },
+      { no: 5, name: 'Josh Timothy', pos: 'Half Back' },
+      { no: 6, name: 'Barry Macken', pos: 'Centre Back' },
+      { no: 7, name: 'Stephen Quigley', pos: 'Half Back' },
+      { no: 8, name: 'Ciarán Boland', pos: 'Midfield' },
+      { no: 9, name: 'Alan Feeney', pos: 'Midfield', captain: true },
+      { no: 10, name: 'Mark Coughlan', pos: 'Half Forward' },
+      { no: 11, name: 'Ross Deegan', pos: 'Centre Forward' },
+      { no: 12, name: 'Kevin Sheerin', pos: 'Half Forward' },
+      { no: 13, name: 'Philip Rushe', pos: 'Corner Forward' },
+      { no: 14, name: 'Damien Tuohy', pos: 'Full Forward' },
+      { no: 15, name: 'Noel Prendergast', pos: 'Corner Forward' },
+    ],
+  },
+  {
+    name: 'Juvenile Academy',
+    blurb:
+      'From nursery to minor, our academy develops skills, friendships and a lifelong love of the game.',
+    image: '/assets/imgFrame1618868204.jpg',
+    coach: 'Fred O’Neil',
+    roster: [
+      { no: 1, name: 'Charlie Doran', pos: 'U15 · Goalkeeper' },
+      { no: 2, name: 'Tommy Waldron', pos: 'U15 · Defender' },
+      { no: 3, name: 'Art Ó Ceallaigh', pos: 'U15 · Defender' },
+      { no: 4, name: 'Bobby Lennon', pos: 'U14 · Defender' },
+      { no: 5, name: 'Fiachra Muldoon', pos: 'U14 · Midfield' },
+      { no: 6, name: 'Louis Gavigan', pos: 'U14 · Midfield', captain: true },
+      { no: 7, name: 'Rian Comerford', pos: 'U13 · Forward' },
+      { no: 8, name: 'Zach Igoe', pos: 'U13 · Forward' },
+      { no: 9, name: 'Milo Hastings', pos: 'U13 · Forward' },
+      { no: 10, name: 'Danny Cusack', pos: 'U12 · Midfield' },
+      { no: 11, name: 'Páidí Roche', pos: 'U12 · Forward' },
+      { no: 12, name: 'Alfie Dunican', pos: 'U12 · Defender' },
+      { no: 13, name: 'Oscar Melia', pos: 'U11 · Forward' },
+      { no: 14, name: 'Seán Óg Hackett', pos: 'U11 · Midfield' },
+      { no: 15, name: 'Theo Brogan', pos: 'U11 · Defender' },
+    ],
+  },
+  {
+    name: 'Camogie',
+    blurb:
+      'Our camogie squads are growing every season and welcome new players of all experience levels.',
+    image: '/assets/imgFrame1618868205.jpg',
+    coach: 'Club Coaching Team',
+    roster: [
+      { no: 1, name: 'Meabh Loftus', pos: 'Goalkeeper' },
+      { no: 2, name: 'Cara Noone', pos: 'Corner Back' },
+      { no: 3, name: 'Dervla Hession', pos: 'Full Back' },
+      { no: 4, name: 'Íde Callaghan', pos: 'Corner Back' },
+      { no: 5, name: 'Bláthnaid Horan', pos: 'Wing Back' },
+      { no: 6, name: 'Treasa Kilcoyne', pos: 'Centre Back' },
+      { no: 7, name: 'Amy Groarke', pos: 'Wing Back' },
+      { no: 8, name: 'Fódhla Rainey', pos: 'Midfield' },
+      { no: 9, name: 'Lucy Brazil', pos: 'Midfield' },
+      { no: 10, name: 'Eimear Scahill', pos: 'Wing Forward', captain: true },
+      { no: 11, name: 'Ciara Lundon', pos: 'Centre Forward' },
+      { no: 12, name: 'Hannah Guihen', pos: 'Wing Forward' },
+      { no: 13, name: 'Tara McInerney', pos: 'Corner Forward' },
+      { no: 14, name: 'Aisling Verdon', pos: 'Full Forward' },
+      { no: 15, name: 'Mia Costigan', pos: 'Corner Forward' },
+    ],
+  },
+]
+
+export const testimonials = [
+  {
+    quote:
+      'Being part of this club has helped me grow in confidence and improve my skills. It really feels like a community.',
+    name: 'Greg Eya',
+    role: 'Youth Player',
+    image: '/assets/imgFrame1618868203.jpg',
+  },
+  {
+    quote:
+      'The coaches genuinely care about every child. My two kids count down the days to training each week.',
+    name: 'Mary Duignan',
+    role: 'Parent',
+    image: '/assets/imgFrame1618868207.jpg',
+  },
+  {
+    quote:
+      'I joined without knowing anyone in Athlone. Within a month I had a full circle of friends for life.',
+    name: 'Cathal Brennan',
+    role: 'Junior Player',
+    image: '/assets/imgFrame1618868219.jpg',
+  },
+  {
+    quote:
+      'Volunteering with the club is the most rewarding thing I do. The community spirit here is unmatched.',
+    name: 'Aoife Kelly',
+    role: 'Club Volunteer',
+    image: '/assets/imgFrame1618868220.jpg',
+  },
+  {
+    quote:
+      'From the summer camp to county finals, the club gives our town something to be proud of all year round.',
+    name: 'John Moran',
+    role: 'Supporter',
+    image: '/assets/imgFrame1618868221.jpg',
+  },
+]

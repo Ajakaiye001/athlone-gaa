@@ -1,0 +1,130 @@
+.board {
+  background: var(--navy);
+  color: var(--chalk);
+  padding-block: clamp(72px, 10vw, 140px);
+}
+
+.board-head .display {
+  font-size: clamp(3rem, 8vw, 7.5rem);
+  margin-top: 10px;
+}
+
+.board-head .chalk-line {
+  margin-top: 18px;
+  color: var(--chalk);
+}
+
+.board-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+  margin-block: clamp(28px, 4vw, 48px) clamp(20px, 3vw, 36px);
+}
+
+.board-months {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.board-month {
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: 13px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 10px 16px;
+  border: 2px solid oklch(0.97 0.006 130 / 0.22);
+  margin-right: -2px;
+  color: var(--chalk-dim);
+  transition: all var(--dur-hover) var(--ease-out);
+  position: relative;
+}
+
+.board-month:hover {
+  color: var(--chalk);
+  z-index: 1;
+  border-color: var(--chalk-dim);
+}
+
+.board-month.is-active {
+  background: var(--chalk);
+  border-color: var(--chalk);
+  color: var(--navy-deep);
+  font-weight: 700;
+  z-index: 2;
+}
+
+.board-codes {
+  display: flex;
+  gap: 22px;
+}
+
+.board-code {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--chalk-dim);
+  padding-block: 6px;
+  position: relative;
+  transition: color var(--dur-hover) var(--ease-out);
+}
+
+.board-code::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  background: var(--leather);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.35s var(--ease-out);
+}
+
+.board-code:hover {
+  color: var(--chalk);
+}
+
+.board-code.is-active {
+  color: var(--leather);
+}
+
+.board-code.is-active::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.board-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.board-empty {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  letter-spacing: 0.1em;
+  color: var(--chalk-dim);
+  padding: 48px 0;
+  text-transform: uppercase;
+}
+
+.board-prev {
+  margin-top: 28px;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--leather);
+  padding-block: 8px;
+  transition: color var(--dur-hover) var(--ease-out);
+}
+
+.board-prev:hover {
+  color: var(--leather-bright);
+}

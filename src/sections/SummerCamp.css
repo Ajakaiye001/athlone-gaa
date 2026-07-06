@@ -1,0 +1,132 @@
+.camp {
+  background: var(--leather);
+  color: var(--navy-deep);
+  padding-block: clamp(72px, 10vw, 140px);
+}
+
+.camp .tag .tag-no {
+  color: var(--navy-deep);
+  font-weight: 700;
+}
+
+.camp-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 6fr) minmax(0, 6fr);
+  gap: clamp(40px, 6vw, 100px);
+  margin-top: clamp(28px, 4vw, 52px);
+  align-items: center;
+}
+
+.camp-lead .display {
+  font-size: clamp(2.6rem, 6vw, 5.8rem);
+  max-width: 12ch;
+}
+
+.camp-lead > p {
+  margin-top: 20px;
+  font-size: clamp(15px, 1.2vw, 18px);
+  font-weight: 500;
+  line-height: 1.6;
+  max-width: 46ch;
+}
+
+.camp-lines {
+  list-style: none;
+  margin-top: clamp(24px, 3vw, 40px);
+  border-top: 2px solid var(--navy-deep);
+}
+
+.camp-lines li {
+  display: flex;
+  gap: 18px;
+  padding-block: 16px;
+  border-bottom: 2px solid oklch(0.19 0.04 262 / 0.35);
+}
+
+.camp-line-no {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 13px;
+  padding-top: 3px;
+}
+
+.camp-lines h3 {
+  font-family: var(--font-body);
+  font-weight: 800;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.camp-lines p {
+  margin-top: 2px;
+  font-size: 14px;
+  line-height: 1.5;
+  opacity: 0.85;
+  max-width: 52ch;
+}
+
+.camp .stamp {
+  margin-top: 28px;
+  border-color: var(--navy-deep);
+  color: var(--navy-deep);
+  box-shadow: 5px 5px 0 0 var(--navy-deep);
+}
+
+.camp .stamp:hover {
+  box-shadow: 3px 3px 0 0 var(--navy-deep);
+  background: var(--navy-deep);
+  color: var(--leather);
+}
+
+.camp .stamp:active {
+  box-shadow: 0 0 0 0 var(--navy-deep);
+}
+
+/* polaroid stickers */
+.camp-snaps {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(18px, 2.5vw, 36px);
+}
+
+.camp-snap {
+  background: var(--chalk);
+  padding: 10px 10px 14px;
+  transform: rotate(var(--rot));
+  box-shadow: 0 14px 30px oklch(0.19 0.04 262 / 0.25);
+  transition: transform 0.4s var(--ease-out), box-shadow 0.4s var(--ease-out);
+}
+
+.camp-snap:nth-child(even) {
+  margin-top: clamp(20px, 3vw, 48px);
+}
+
+.camp-snap:hover {
+  transform: rotate(0deg) translateY(-6px) scale(1.03);
+  box-shadow: 0 22px 44px oklch(0.19 0.04 262 / 0.35);
+  z-index: 2;
+  position: relative;
+}
+
+.camp-snap img {
+  aspect-ratio: 5 / 4;
+  width: 100%;
+  object-fit: cover;
+}
+
+.camp-snap figcaption {
+  margin-top: 10px;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  color: var(--ink);
+  text-align: center;
+}
+
+@media (max-width: 900px) {
+  .camp-grid {
+    grid-template-columns: 1fr;
+  }
+}

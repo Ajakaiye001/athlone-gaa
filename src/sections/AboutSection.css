@@ -1,0 +1,88 @@
+.club {
+  background: var(--paper);
+  padding-block: clamp(72px, 10vw, 140px);
+}
+
+.club-rule {
+  margin-top: 14px;
+  color: var(--ink);
+}
+
+.club-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+  gap: clamp(32px, 5vw, 96px);
+  align-items: start;
+  margin-top: clamp(32px, 4vw, 56px);
+}
+
+.club-head {
+  font-size: clamp(2.4rem, 5.2vw, 5rem);
+  max-width: 14ch;
+}
+
+.club-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-top: 10px;
+}
+
+.club-copy p {
+  font-size: clamp(15px, 1.15vw, 17px);
+  line-height: 1.65;
+  color: var(--ink-soft);
+  max-width: 52ch;
+}
+
+.club-copy .stamp {
+  align-self: flex-start;
+  margin-top: 12px;
+}
+
+/* scoreboard stat strip: one row, mono digits, ruled like a scoreboard */
+.club-board {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin-top: clamp(56px, 7vw, 110px);
+  border-top: 3px solid var(--ink);
+}
+
+.club-stat {
+  padding: clamp(20px, 2.5vw, 36px) clamp(14px, 2vw, 28px) 0 0;
+}
+
+.club-stat + .club-stat {
+  padding-left: clamp(14px, 2vw, 28px);
+  border-left: 1px solid oklch(0.22 0.02 152 / 0.25);
+}
+
+.club-stat dd {
+  font-size: clamp(2.6rem, 5.5vw, 5.5rem);
+  color: var(--pitch);
+}
+
+.club-stat dt {
+  margin-top: 8px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+@media (max-width: 900px) {
+  .club-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .club-board {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 28px;
+  }
+
+  .club-stat:nth-child(3) {
+    border-left: none;
+    padding-left: 0;
+  }
+}

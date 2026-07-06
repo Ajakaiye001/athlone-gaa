@@ -1,0 +1,36 @@
+.ticker {
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: 13px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  padding-block: 12px;
+  user-select: none;
+}
+
+.ticker--pitch {
+  background: var(--pitch-deep);
+  color: var(--chalk);
+}
+
+.ticker--navy {
+  background: var(--navy-deep);
+  color: var(--leather);
+}
+
+.ticker--paper {
+  background: var(--paper-deep);
+  color: var(--ink);
+  border-block: 2px solid var(--ink);
+}
+
+.ticker-item {
+  display: inline-flex;
+  align-items: center;
+}
+
+.ticker-dot {
+  font-size: 7px;
+  margin-inline: 26px;
+  opacity: 0.5;
+}

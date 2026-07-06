@@ -1,0 +1,56 @@
+.product-art {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.product-art path,
+.product-art circle {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 100;
+  stroke-dashoffset: 0;
+}
+
+/* hover: the chalk redraws itself */
+.product-tile:hover .product-art path,
+.product-tile:hover .product-art circle,
+.shop-hero:hover .product-art path,
+.shop-hero:hover .product-art circle,
+.shopteaser-piece:hover .product-art path,
+.shopteaser-piece:hover .product-art circle {
+  animation: chalk-redraw 1s var(--ease-out) both;
+}
+
+.product-tile:hover .product-art path:nth-of-type(2),
+.shop-hero:hover .product-art path:nth-of-type(2) {
+  animation-delay: 0.15s;
+}
+
+.product-tile:hover .product-art circle,
+.shop-hero:hover .product-art circle {
+  animation-delay: 0.3s;
+}
+
+@keyframes chalk-redraw {
+  from {
+    stroke-dashoffset: 100;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .product-tile:hover .product-art path,
+  .product-tile:hover .product-art circle,
+  .shop-hero:hover .product-art path,
+  .shop-hero:hover .product-art circle,
+  .shopteaser-piece:hover .product-art path,
+  .shopteaser-piece:hover .product-art circle {
+    animation: none;
+  }
+}

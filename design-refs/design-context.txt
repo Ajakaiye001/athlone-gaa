@@ -1,0 +1,867 @@
+const imgIconChevronRight = "https://www.figma.com/api/mcp/asset/150b290b-e9d3-4c55-a54d-9f7afb76c223";
+const imgFrame1618868168 = "https://www.figma.com/api/mcp/asset/ac4c47f2-7cb5-4a95-9066-c3ad43d4a5d0";
+const imgImage232 = "https://www.figma.com/api/mcp/asset/8a0e41f8-d8d6-4f04-b0ca-8d9292d8966b";
+const imgImages1 = "https://www.figma.com/api/mcp/asset/a4afebb2-894e-4cb6-a01e-c31e55a20ebb";
+const imgSubtract = "https://www.figma.com/api/mcp/asset/a148688e-df41-4d7f-be97-5a1848b7b333";
+const imgImages2 = "https://www.figma.com/api/mcp/asset/b8735ec1-93e1-4f98-adb5-ecdf40c6be0c";
+const imgFrame1618868188 = "https://www.figma.com/api/mcp/asset/cdf81888-5b81-43a9-be37-55a830bc1206";
+const imgFrame1618868189 = "https://www.figma.com/api/mcp/asset/d75eb6f7-bcb2-41dd-96a6-18c4c87d8dd3";
+const imgFrame1618868190 = "https://www.figma.com/api/mcp/asset/3496d219-bc60-4b3d-98f9-0f58e18a0c3f";
+const imgFrame1618868191 = "https://www.figma.com/api/mcp/asset/6bcd70fb-b7be-421b-ac32-f03fd14d6920";
+const imgFrame1618868192 = "https://www.figma.com/api/mcp/asset/74d4cbbe-f444-43be-b922-d474a5e748d1";
+const imgFrame1618868193 = "https://www.figma.com/api/mcp/asset/9eaed736-f2f9-4c0e-8c73-1bad580096c3";
+const imgFrame1618868194 = "https://www.figma.com/api/mcp/asset/d165c4c1-2cf4-4b06-b646-bfc8b5044569";
+const imgImage241 = "https://www.figma.com/api/mcp/asset/a8a8acc1-b77b-4cf0-a3f6-fb4ba111cefe";
+const imgDownload = "https://www.figma.com/api/mcp/asset/275e30ff-1506-4ab9-bda2-6f58e6e28428";
+const imgFrame1618868199 = "https://www.figma.com/api/mcp/asset/6acf4aeb-0137-4359-a8f7-e7ee78dd44ab";
+const imgFrame1618868200 = "https://www.figma.com/api/mcp/asset/c409599b-3e3c-406f-a584-24d8e98960ff";
+const imgFrame1618868202 = "https://www.figma.com/api/mcp/asset/668a08ad-0267-445c-bb3c-7b221aca0f5f";
+const imgFrame1618868201 = "https://www.figma.com/api/mcp/asset/bb4608ab-db6a-45b4-afbf-6c6ff6b536a2";
+const imgFrame1618868203 = "https://www.figma.com/api/mcp/asset/7d60c762-872f-4bd6-b9ee-686a0e5f207a";
+const imgFrame1618868204 = "https://www.figma.com/api/mcp/asset/c37907e1-b1ae-4bca-be5b-07a532fe53f3";
+const imgFrame1618868205 = "https://www.figma.com/api/mcp/asset/84ec614c-12af-44b2-883f-6828f16479d6";
+const imgFrame1618868206 = "https://www.figma.com/api/mcp/asset/44676c2d-b56e-4cd0-89ec-e827284dc729";
+const imgImage234 = "https://www.figma.com/api/mcp/asset/56f25695-e5fb-4e9f-81aa-ec846bb32fd8";
+const imgFrame1618868207 = "https://www.figma.com/api/mcp/asset/83215229-067c-4e96-a1fe-d18de18b9f97";
+const imgFrame1618868219 = "https://www.figma.com/api/mcp/asset/108db5f7-2c58-4e1e-a441-3b9e661d70d4";
+const imgFrame1618868220 = "https://www.figma.com/api/mcp/asset/25659741-687d-4eb9-9a7a-dd4d125ea213";
+const imgFrame1618868221 = "https://www.figma.com/api/mcp/asset/f8af9733-e11e-4cbf-b498-da763be12d30";
+const imgSubtract1 = "https://www.figma.com/api/mcp/asset/51162279-1593-4e3c-b703-f2cf98940b25";
+const imgImage238 = "https://www.figma.com/api/mcp/asset/43f88d59-adfd-4382-a934-4df76964ee81";
+const imgImages3 = "https://www.figma.com/api/mcp/asset/622198ef-3f38-442a-a42c-23290f6d572f";
+const imgIconArrowUpRight = "https://www.figma.com/api/mcp/asset/7e143c8d-a217-44fa-b497-cb7843b11374";
+const imgIconArrowRight = "https://www.figma.com/api/mcp/asset/5274ab82-68d1-4e1b-a267-90c72c0c449f";
+const imgIconChevronRight1 = "https://www.figma.com/api/mcp/asset/0ef3bba6-ddd6-4901-88da-0d715bcf72d7";
+const imgLine56 = "https://www.figma.com/api/mcp/asset/5fda3de4-0c33-4f12-9b9f-28837540e4a6";
+const imgLine57 = "https://www.figma.com/api/mcp/asset/19efcc24-47ae-4311-8ebb-0af6eba4b1bb";
+const imgLine58 = "https://www.figma.com/api/mcp/asset/9b244d6d-f71e-40e0-85c3-5bd40cca1641";
+const imgIconArrowLeft = "https://www.figma.com/api/mcp/asset/89e2125e-af7d-41ae-9dab-830442cdd8cd";
+const imgIconSendAlt = "https://www.figma.com/api/mcp/asset/7fb8ef67-b2d5-40a0-b574-8f0ebb73e19f";
+const imgSocialIcons = "https://www.figma.com/api/mcp/asset/0617c1c7-5a57-45db-a1fe-9b3c302b0576";
+const imgLogoIconInstagram = "https://www.figma.com/api/mcp/asset/2bbe1362-6d2e-4cda-abeb-c9611c610d4f";
+const imgSocialIcons1 = "https://www.figma.com/api/mcp/asset/b1d1eb28-2dfd-4d23-a74f-cc80e47fc815";
+
+function Frame1618868237({ className }: { className?: string }) {
+  return (
+    <div className={className || "bg-white h-[52px] overflow-clip relative rounded-bl-[16px] rounded-tl-[16px] shadow-[0px_3px_8px_0px_rgba(200,200,200,0.15)] w-[320px]"} data-node-id="6:52">
+      <p className="[word-break:break-word] absolute font-['Hanken_Grotesk:SemiBold'] font-semibold leading-[normal] left-[29px] text-[32px] text-black top-[5px] whitespace-nowrap" data-node-id="6:53">
+        March
+      </p>
+      <div className="absolute bg-[#344054] h-[52px] left-0 rounded-bl-[3px] rounded-tl-[3px] top-0 w-[10px]" data-node-id="6:54" />
+      <div className="absolute left-[259px] size-[32px] top-[10px]" data-node-id="6:55" data-name="icon / chevron-right">
+        <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIconChevronRight} />
+      </div>
+    </div>
+  );
+}
+
+function January({ className }: { className?: string }) {
+  return (
+    <div className={className || "h-[52px] relative w-[149px]"} data-node-id="6:44" data-name="January">
+      <p className="[word-break:break-word] absolute font-['Hanken_Grotesk:SemiBold'] font-semibold inset-[9.62%_20.13%_9.62%_0] leading-[normal] text-[#667185] text-[32px] whitespace-nowrap" data-node-id="6:45">
+        January
+      </p>
+    </div>
+  );
+}
+
+export default function AthloneGaaWebsite() {
+  return (
+    <div className="bg-[#f0f2f5] relative size-full" data-node-id="6:353" data-name="Athlone gaa website">
+      <div className="absolute content-stretch flex flex-col items-center left-[-2px] top-0 w-[1444px]" data-node-id="6:354">
+        <div className="bg-[#f7f9fc] h-[1024px] overflow-clip relative shrink-0 w-full" data-node-id="6:355" data-name="Desktop - 5">
+          <div className="absolute h-[940px] left-[8px] overflow-clip rounded-[16px] top-[19px] w-[1424px]" data-node-id="6:356">
+            <div aria-hidden className="absolute inset-0 pointer-events-none rounded-[16px]">
+              <img alt="" className="absolute max-w-none object-cover rounded-[16px] size-full" src={imgFrame1618868168} />
+              <div className="absolute bg-gradient-to-b from-[rgba(0,0,0,0)] inset-0 rounded-[16px] to-[65.975%] to-[rgba(0,0,0,0.55)]" />
+            </div>
+            <div className="absolute bg-white h-[45.959px] left-[24px] overflow-clip rounded-[22.261px] top-[37px] w-[160.139px]" data-node-id="6:357">
+              <div className="absolute content-stretch flex gap-[5.745px] items-center left-[11.49px] top-[5.99px]" data-node-id="6:358">
+                <div className="h-[33.693px] relative shrink-0 w-[24.415px]" data-node-id="6:359" data-name="image 232">
+                  <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage232} />
+                </div>
+                <p className="[word-break:break-word] font-['Hanken_Grotesk:ExtraBold'] font-extrabold leading-[normal] relative shrink-0 text-[#0a1a37] text-[17.953px] whitespace-nowrap" data-node-id="6:360">
+                  Athlone GAA
+                </p>
+              </div>
+            </div>
+            <div className="-translate-x-1/2 absolute content-stretch flex gap-[16px] items-center left-[calc(50%+0.5px)] top-[41px]" data-node-id="6:361">
+              <div className="backdrop-blur-[15px] border border-solid border-white content-stretch flex items-center justify-center overflow-clip px-[38px] py-[10px] relative rounded-[24px] shrink-0" data-node-id="6:362" style={{ backgroundImage: "linear-gradient(139.56325133947456deg, rgba(255, 255, 255, 0.09) 1.2143%, rgba(196, 196, 196, 0.015) 100%)" }}>
+                <p className="[word-break:break-word] font-['Inter:Regular'] font-normal leading-[normal] not-italic relative shrink-0 text-[16px] text-white whitespace-nowrap" data-node-id="6:363">
+                  Home
+                </p>
+              </div>
+              <div className="backdrop-blur-[15px] border border-solid border-white content-stretch flex items-center justify-center overflow-clip px-[38px] py-[10px] relative rounded-[24px] shrink-0" data-node-id="6:364" style={{ backgroundImage: "linear-gradient(139.7958983926994deg, rgba(255, 255, 255, 0.09) 1.2143%, rgba(196, 196, 196, 0.015) 100%)" }}>
+                <p className="[word-break:break-word] font-['Inter:Regular'] font-normal leading-[normal] not-italic relative shrink-0 text-[16px] text-white whitespace-nowrap" data-node-id="6:365">
+                  About
+                </p>
+              </div>
+              <div className="backdrop-blur-[15px] border border-solid border-white content-stretch flex items-center justify-center overflow-clip px-[38px] py-[10px] relative rounded-[24px] shrink-0" data-node-id="6:366" style={{ backgroundImage: "linear-gradient(140.70458597118716deg, rgba(255, 255, 255, 0.09) 1.2143%, rgba(196, 196, 196, 0.015) 100%)" }}>
+                <p className="[word-break:break-word] font-['Inter:Regular'] font-normal leading-[normal] not-italic relative shrink-0 text-[16px] text-white whitespace-nowrap" data-node-id="6:367">
+                  Teams
+                </p>
+              </div>
+              <div className="backdrop-blur-[15px] border border-solid border-white content-stretch flex items-center justify-center overflow-clip px-[38px] py-[10px] relative rounded-[24px] shrink-0" data-node-id="6:368" style={{ backgroundImage: "linear-gradient(153.9558396950202deg, rgba(255, 255, 255, 0.09) 1.2143%, rgba(196, 196, 196, 0.015) 100%)" }}>
+                <p className="[word-break:break-word] font-['Inter:Regular'] font-normal leading-[normal] not-italic relative shrink-0 text-[16px] text-white whitespace-nowrap" data-node-id="6:369">{`Fixtures & Results`}</p>
+              </div>
+              <div className="backdrop-blur-[15px] border border-solid border-white content-stretch flex items-center justify-center overflow-clip px-[38px] py-[10px] relative rounded-[24px] shrink-0" data-node-id="6:370" style={{ backgroundImage: "linear-gradient(139.0912176917518deg, rgba(255, 255, 255, 0.09) 1.2143%, rgba(196, 196, 196, 0.015) 100%)" }}>
+                <p className="[word-break:break-word] font-['Inter:Regular'] font-normal leading-[normal] not-italic relative shrink-0 text-[16px] text-white whitespace-nowrap" data-node-id="6:371">
+                  News
+                </p>
+              </div>
+            </div>
+            <div className="absolute bg-white h-[46px] left-[1252px] overflow-clip rounded-[22.261px] top-[37px] w-[148px]" data-node-id="6:372">
+              <div className="absolute content-stretch flex gap-[12px] items-center left-[18px] top-[7px]" data-node-id="6:373">
+                <p className="[word-break:break-word] font-['Hanken_Grotesk:Regular'] font-normal leading-[normal] relative shrink-0 text-[17.953px] text-black whitespace-nowrap" data-node-id="6:374">
+                  Join Club
+                </p>
+                <div className="bg-[#0a1a37] overflow-clip relative rounded-[60px] shrink-0 size-[33px]" data-node-id="6:375">
+                  <div className="absolute left-[5px] size-[24px] top-[4px]" data-node-id="6:376" data-name="icon / arrow-up-right">
+                    <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIconArrowUpRight} />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="absolute content-stretch flex gap-[140px] items-center left-[24px] top-[664px]" data-node-id="6:377">
+              <p className="[word-break:break-word] font-['Hanken_Grotesk:Bold'] font-bold leading-[normal] relative shrink-0 text-[48px] text-white w-[709px]" data-node-id="6:378">
+                Athlone GAA — Where Community Grows Through Sport
+              </p>
+              <div className="content-stretch flex flex-col gap-[24px] items-end relative shrink-0 w-[497px]" data-node-id="6:379">
+                <p className="[word-break:break-word] font-['Inter:Medium'] font-medium leading-[1.5] not-italic relative shrink-0 text-[18px] text-justify text-white w-[542px]" data-node-id="6:380">
+                  For generations, Athlone GAA has brought people together through sport, teamwork, and shared pride. From our youngest players to our senior teams, we’re building a stronger, united community on and off the pitch.
+                </p>
+                <div className="content-stretch flex gap-[24px] items-center relative shrink-0" data-node-id="6:381">
+                  <div className="bg-white h-[46px] overflow-clip relative rounded-[22.261px] shrink-0 w-[160px]" data-node-id="6:382">
+                    <div className="absolute content-stretch flex gap-[12px] items-center left-[18px] top-[7px]" data-node-id="6:383">
+                      <p className="[word-break:break-word] font-['Hanken_Grotesk:Regular'] font-normal leading-[normal] relative shrink-0 text-[17.953px] text-black whitespace-nowrap" data-node-id="6:384">
+                        Get Tickets
+                      </p>
+                      <div className="bg-[#0a1a37] overflow-clip relative rounded-[60px] shrink-0 size-[33px]" data-node-id="6:385">
+                        <div className="absolute left-[5px] size-[24px] top-[4px]" data-node-id="6:386" data-name="icon / arrow-up-right">
+                          <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIconArrowUpRight} />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="backdrop-blur-[15px] border border-solid border-white h-[46px] overflow-clip relative rounded-[24px] shrink-0 w-[185px]" data-node-id="6:387" style={{ backgroundImage: "linear-gradient(146.67877359390363deg, rgba(255, 255, 255, 0.09) 1.2143%, rgba(196, 196, 196, 0.015) 100%)" }}>
+                    <div className="absolute content-stretch flex gap-[12px] items-center left-[24px] top-[6px]" data-node-id="6:388">
+                      <p className="[word-break:break-word] font-['Hanken_Grotesk:Regular'] font-normal leading-[normal] relative shrink-0 text-[17.953px] text-white whitespace-nowrap" data-node-id="6:389">
+                        View Fixtures
+                      </p>
+                      <div className="bg-[#0a1a37] overflow-clip relative rounded-[60px] shrink-0 size-[33px]" data-node-id="6:390">
+                        <div className="absolute left-[5px] size-[24px] top-[4px]" data-node-id="6:391" data-name="icon / arrow-right">
+                          <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIconArrowRight} />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="bg-[#f0f2f5] h-[739px] overflow-clip relative shrink-0 w-full" data-node-id="6:392" data-name="Desktop - 6">
+          <div className="absolute bg-white h-[46px] left-[32px] overflow-clip rounded-[22.261px] shadow-[0px_4px_4px_0px_rgba(222,222,222,0.25)] top-[88px] w-[181px]" data-node-id="6:393">
+            <p className="[word-break:break-word] absolute font-['Hanken_Grotesk:Regular'] font-normal leading-[normal] left-[13px] text-[17.953px] text-black top-[12px] whitespace-nowrap" data-node-id="6:394">
+              About Athlone GAA
+            </p>
+          </div>
+          <div className="absolute bg-white h-[46px] left-[32px] overflow-clip rounded-[22.261px] top-[566px] w-[160px]" data-node-id="6:395">
+            <div className="absolute content-stretch flex gap-[12px] items-center left-[18px] top-[7px]" data-node-id="6:396">
+              <p className="[word-break:break-word] font-['Hanken_Grotesk:Regular'] font-normal leading-[normal] relative shrink-0 text-[17.953px] text-black whitespace-nowrap" data-node-id="6:397">
+                Learn more
+              </p>
+              <div className="bg-[#0a1a37] overflow-clip relative rounded-[60px] shrink-0 size-[33px]" data-node-id="6:398">
+                <div className="absolute left-[5px] size-[24px] top-[4px]" data-node-id="6:399" data-name="icon / arrow-up-right">
+                  <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIconArrowUpRight} />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="absolute content-stretch flex flex-col gap-[8px] items-start left-[32px] top-[265px] w-[557px]" data-node-id="6:400">
+            <div className="content-stretch flex gap-[4px] items-center relative shrink-0" data-node-id="6:401">
+              <p className="[word-break:break-word] font-['Hanken_Grotesk:SemiBold'] font-semibold leading-[normal] relative shrink-0 text-[#1d2739] text-[32px] whitespace-nowrap" data-node-id="6:402">
+                A Club for Everyone
+              </p>
+              <div className="relative shrink-0 size-[34px]" data-node-id="6:403" data-name="images 1">
+                <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImages1} />
+              </div>
+              <p className="[word-break:break-word] font-['Hanken_Grotesk:SemiBold'] font-semibold leading-[normal] relative shrink-0 text-[#1d2739] text-[32px] w-[149px]" data-node-id="6:404">
+                in Athlone
+              </p>
+            </div>
+            <p className="[word-break:break-word] font-['Inter:Regular'] font-normal leading-[1.5] min-w-full not-italic relative shrink-0 text-[#475367] text-[16px] text-justify w-[min-content]" data-node-id="6:405">
+              Athlone GAA is a club shaped by dedication, teamwork and local pride. We welcome players and families from every part of Athlone and create a place where people feel supported on and off the pitch. Our commitment is to develop talent, promote positive values and strengthen the bonds that bring our community together.
+            </p>
+          </div>
+          <div className="absolute h-[458px] left-[calc(50%+41px)] top-[193px] w-[560px]" data-node-id="6:406" data-name="Subtract">
+            <img alt="" className="absolute block inset-0 max-w-none size-full" height="458" src={imgSubtract} width="560" />
+          </div>
+          <div className="absolute flex items-center justify-center left-[calc(75%+35px)] size-[120.393px] top-[524px]" data-node-id="6:410">
+            <div className="flex-none rotate-[19.91deg]">
+              <div className="relative shadow-[-8px_7px_7.1px_0px_rgba(9,156,9,0.43)] size-[94px]" data-name="images 2">
+                <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImages2} />
+              </div>
+            </div>
+          </div>
+          <div className="absolute contents left-[calc(58.33%+18.67px)] top-[566px]" data-node-id="6:411">
+            <div className="absolute bg-white h-[41px] left-[calc(58.33%+18.67px)] overflow-clip rounded-br-[20px] rounded-tl-[20px] rounded-tr-[20px] top-[566px] w-[222px]" data-node-id="6:412">
+              <p className="[word-break:break-word] absolute font-['Hanken_Grotesk:SemiBold'] font-semibold leading-[normal] left-[31px] text-[#101928] text-[16px] top-[10px] whitespace-nowrap" data-node-id="6:413">
+                64+ homegrown players
+              </p>
+            </div>
+            <div className="absolute bg-white h-[31px] left-[calc(58.33%+18.67px)] overflow-clip rounded-bl-[20px] rounded-br-[20px] rounded-tr-[2px] top-[601px] w-[181px]" data-node-id="6:414">
+              <div className="absolute content-stretch flex items-center left-[17px] top-0" data-node-id="6:415">
+                <div className="border-[1.2px] border-solid border-white mr-[-6px] relative rounded-[25.2px] shrink-0 size-[24px]" data-node-id="6:416">
+                  <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[25.2px] size-full" src={imgFrame1618868188} />
+                </div>
+                <div className="border-[1.2px] border-solid border-white mr-[-6px] relative rounded-[25.2px] shrink-0 size-[24px]" data-node-id="6:417">
+                  <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[25.2px] size-full" src={imgFrame1618868189} />
+                </div>
+                <div className="border-[1.2px] border-solid border-white mr-[-6px] relative rounded-[25.2px] shrink-0 size-[24px]" data-node-id="6:418">
+                  <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[25.2px] size-full" src={imgFrame1618868190} />
+                </div>
+                <div className="border-[1.2px] border-solid border-white mr-[-6px] relative rounded-[25.2px] shrink-0 size-[24px]" data-node-id="6:419">
+                  <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[25.2px] size-full" src={imgFrame1618868191} />
+                </div>
+                <div className="border-[1.2px] border-solid border-white mr-[-6px] relative rounded-[25.2px] shrink-0 size-[24px]" data-node-id="6:420">
+                  <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[25.2px] size-full" src={imgFrame1618868192} />
+                </div>
+                <div className="border-[1.2px] border-solid border-white mr-[-6px] relative rounded-[25.2px] shrink-0 size-[24px]" data-node-id="6:421">
+                  <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[25.2px] size-full" src={imgFrame1618868193} />
+                </div>
+                <div className="border-[1.2px] border-solid border-white relative rounded-[25.2px] shrink-0 size-[24px]" data-node-id="6:422">
+                  <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[25.2px] size-full" src={imgFrame1618868194} />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="bg-white h-[931px] overflow-clip relative rounded-[16px] shrink-0 w-[1416px]" data-node-id="6:423" data-name="Desktop - 16">
+          <January className="absolute h-[52px] left-[61px] top-[232px] w-[149px]" />
+          <div className="absolute h-[52px] left-[61px] top-[329px] w-[171px]" data-node-id="6:425" data-name="January">
+            <p className="[word-break:break-word] absolute font-['Hanken_Grotesk:SemiBold'] font-semibold inset-[9.62%_20.13%_9.62%_0] leading-[normal] text-[#667185] text-[32px] whitespace-nowrap" data-node-id="I6:425;1698:16944">
+              February
+            </p>
+          </div>
+          <div className="absolute h-[52px] left-[61px] top-[513px] w-[171px]" data-node-id="6:426" data-name="January">
+            <p className="[word-break:break-word] absolute font-['Hanken_Grotesk:SemiBold'] font-semibold inset-[9.62%_20.13%_9.62%_0] leading-[normal] text-[#667185] text-[32px] whitespace-nowrap" data-node-id="I6:426;1698:16944">
+              April
+            </p>
+          </div>
+          <div className="absolute h-[52px] left-[61px] top-[605px] w-[171px]" data-node-id="6:427" data-name="January">
+            <p className="[word-break:break-word] absolute font-['Hanken_Grotesk:SemiBold'] font-semibold inset-[9.62%_20.13%_9.62%_0] leading-[normal] text-[#667185] text-[32px] whitespace-nowrap" data-node-id="I6:427;1698:16944">
+              May
+            </p>
+          </div>
+          <div className="absolute h-[52px] left-[61px] top-[697px] w-[171px]" data-node-id="6:428" data-name="January">
+            <p className="[word-break:break-word] absolute font-['Hanken_Grotesk:SemiBold'] font-semibold inset-[9.62%_20.13%_9.62%_0] leading-[normal] text-[#667185] text-[32px] whitespace-nowrap" data-node-id="I6:428;1698:16944">
+              June
+            </p>
+          </div>
+          <div className="absolute h-[52px] left-[61px] top-[789px] w-[171px]" data-node-id="6:429" data-name="January">
+            <p className="[word-break:break-word] absolute font-['Hanken_Grotesk:SemiBold'] font-semibold inset-[9.62%_20.13%_9.62%_0] leading-[normal] text-[#667185] text-[32px] whitespace-nowrap" data-node-id="I6:429;1698:16944">
+              July
+            </p>
+          </div>
+          <Frame1618868237 className="absolute bg-white h-[52px] left-[32px] overflow-clip rounded-bl-[16px] rounded-tl-[16px] shadow-[0px_3px_8px_0px_rgba(200,200,200,0.15)] top-[416px] w-[320px]" />
+          <div className="absolute bg-white h-[56px] left-[32px] overflow-clip rounded-[32px] shadow-[0px_4px_25px_0px_rgba(177,177,177,0.25)] top-[121px] w-[1374px]" data-node-id="6:431">
+            <p className="[word-break:break-word] absolute font-['Hanken_Grotesk:SemiBold'] font-semibold leading-[normal] left-[29px] text-[20px] text-black top-[calc(50%-13px)] whitespace-nowrap" data-node-id="6:432">
+              2026
+            </p>
+            <div className="absolute flex items-center justify-center left-[266px] size-[24px] top-[16px]" data-node-id="6:433">
+              <div className="flex-none rotate-90">
+                <div className="relative size-[24px]" data-name="icon / chevron-right">
+                  <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIconChevronRight1} />
+                </div>
+              </div>
+            </div>
+            <div className="-translate-x-1/2 [word-break:break-word] absolute content-stretch flex font-['Hanken_Grotesk:SemiBold'] font-semibold gap-[31px] items-center leading-[normal] left-[calc(50%+179px)] text-[24px] top-[12px] whitespace-nowrap" data-node-id="6:434">
+              <p className="relative shrink-0 text-black" data-node-id="6:435">
+                Both
+              </p>
+              <p className="relative shrink-0 text-[#98a2b3]" data-node-id="6:436">
+                Football
+              </p>
+              <p className="relative shrink-0 text-[#98a2b3]" data-node-id="6:437">
+                Hurling
+              </p>
+            </div>
+            <div className="absolute flex h-[34px] items-center justify-center left-[320px] top-[13px] w-0" data-node-id="6:438">
+              <div className="flex-none rotate-90">
+                <div className="h-0 relative w-[34px]">
+                  <div className="absolute inset-[-1px_0_0_0]">
+                    <img alt="" className="block max-w-none size-full" src={imgLine56} />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="absolute flex h-[699px] items-center justify-center left-[calc(25%-7px)] top-[215px] w-0" data-node-id="6:439">
+            <div className="flex-none rotate-90">
+              <div className="h-0 relative w-[699px]">
+                <div className="absolute inset-[-11px_-0.86%_-10px_-2%]">
+                  <img alt="" className="block max-w-none size-full" src={imgLine57} />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="-translate-x-1/2 absolute bg-white border border-[rgba(239,239,239,0.61)] border-solid content-stretch flex flex-col items-start left-[calc(62.5%-3px)] overflow-clip px-[34px] py-[11px] rounded-[22.261px] shadow-[0px_4px_4px_0px_rgba(237,237,237,0.25)] top-[215px]" data-node-id="6:440">
+            <p className="[word-break:break-word] font-['Hanken_Grotesk:Regular'] font-normal leading-[normal] relative shrink-0 text-[17.953px] text-black whitespace-nowrap" data-node-id="6:441">{`Show previous results `}</p>
+          </div>
+          <div className="absolute contents left-[calc(25%+30px)] top-[306px]" data-node-id="6:442">
+            <p className="[word-break:break-word] absolute font-['Hanken_Grotesk:SemiBold'] font-semibold leading-[normal] left-[calc(25%+69px)] text-[#2d5257] text-[20px] top-[378px] whitespace-nowrap" data-node-id="6:443">
+              Allianz Hurling League Roinn 2
+            </p>
+            <div className="absolute h-0 left-[calc(25%+31px)] top-[357px] w-[1015px]" data-node-id="6:444">
+              <div className="absolute inset-[-1px_0_0_0]">
+                <img alt="" className="block max-w-none size-full" src={imgLine58} />
+              </div>
+            </div>
+            <p className="[word-break:break-word] absolute font-['Hanken_Grotesk:Bold'] font-bold leading-[normal] left-[calc(25%+69px)] text-[24px] text-black top-[306px] uppercase whitespace-nowrap" data-node-id="6:445">
+              Sunday 01 March
+            </p>
+            <div className="absolute bg-[#f7f9fc] h-[112px] left-[calc(25%+30px)] overflow-clip top-[453px] w-[1016px]" data-node-id="6:446">
+              <div className="absolute bg-[#344054] h-[112px] left-0 top-0 w-[3px]" data-node-id="6:447" />
+              <div className="-translate-x-1/2 -translate-y-1/2 [word-break:break-word] absolute content-stretch flex flex-col font-['Hanken_Grotesk:Bold'] font-bold gap-[7px] items-center justify-center leading-[normal] left-[calc(50%+0.5px)] top-[calc(50%-0.5px)] w-[179px]" data-node-id="6:448">
+                <div className="content-stretch flex gap-[24px] items-center justify-center relative shrink-0 text-[#2d5257] text-[18px] w-[122px] whitespace-nowrap" data-node-id="6:449">
+                  <p className="relative shrink-0" data-node-id="6:450">
+                    0-17
+                  </p>
+                  <p className="relative shrink-0" data-node-id="6:451">
+                    1-23
+                  </p>
+                </div>
+                <p className="min-w-full relative shrink-0 text-[#667185] text-[16px] w-[min-content]" data-node-id="6:452">
+                  Venue: TEG Cusack Park
+                </p>
+                <p className="relative shrink-0 text-[#667185] text-[16px] whitespace-nowrap" data-node-id="6:453">
+                  Referee: Eamonn Furlong
+                </p>
+              </div>
+              <div className="-translate-y-1/2 absolute content-stretch flex gap-[28px] items-center left-[40.86px] top-[calc(50%-0.15px)]" data-node-id="6:454">
+                <div className="h-[61.693px] relative shrink-0 w-[44.705px]" data-node-id="6:455" data-name="image 232">
+                  <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage232} />
+                </div>
+                <p className="[word-break:break-word] font-['Hanken_Grotesk:ExtraBold'] font-extrabold leading-[normal] relative shrink-0 text-[#0a1a37] text-[20px] whitespace-nowrap" data-node-id="6:456">
+                  Athlone GAA
+                </p>
+              </div>
+              <div className="-translate-y-1/2 absolute content-stretch flex gap-[28px] items-center left-[727px] top-1/2" data-node-id="6:457">
+                <p className="[word-break:break-word] font-['Hanken_Grotesk:ExtraBold'] font-extrabold leading-[normal] relative shrink-0 text-[#0a1a37] text-[20px] whitespace-nowrap" data-node-id="6:458">
+                  Roscommon GAA
+                </p>
+                <div className="relative shrink-0 size-[62px]" data-node-id="6:459" data-name="image 241">
+                  <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage241} />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="absolute contents left-[calc(25%+30px)] top-[605px]" data-node-id="6:460">
+            <p className="[word-break:break-word] absolute font-['Hanken_Grotesk:SemiBold'] font-semibold leading-[normal] left-[calc(25%+69px)] text-[#2d5257] text-[20px] top-[677px] whitespace-nowrap" data-node-id="6:461">
+              Allianz Hurling League Roinn 2
+            </p>
+            <div className="absolute h-0 left-[calc(25%+31px)] top-[656px] w-[1015px]" data-node-id="6:462">
+              <div className="absolute inset-[-1px_0_0_0]">
+                <img alt="" className="block max-w-none size-full" src={imgLine58} />
+              </div>
+            </div>
+            <p className="[word-break:break-word] absolute font-['Hanken_Grotesk:Bold'] font-bold leading-[normal] left-[calc(25%+69px)] text-[24px] text-black top-[605px] uppercase whitespace-nowrap" data-node-id="6:463">
+              Sunday 02 March
+            </p>
+            <div className="absolute bg-[#f7f9fc] h-[112px] left-[calc(25%+30px)] overflow-clip top-[752px] w-[1016px]" data-node-id="6:464">
+              <div className="absolute bg-[#344054] h-[112px] left-0 top-0 w-[3px]" data-node-id="6:465" />
+              <div className="-translate-x-1/2 -translate-y-1/2 [word-break:break-word] absolute content-stretch flex flex-col font-['Hanken_Grotesk:Bold'] font-bold gap-[7px] items-center justify-center leading-[normal] left-[calc(50%+0.5px)] top-[calc(50%-0.5px)] w-[179px]" data-node-id="6:466">
+                <div className="content-stretch flex gap-[24px] items-center justify-center relative shrink-0 text-[#2d5257] text-[18px] w-[122px] whitespace-nowrap" data-node-id="6:467">
+                  <p className="relative shrink-0" data-node-id="6:468">
+                    0-20
+                  </p>
+                  <p className="relative shrink-0" data-node-id="6:469">
+                    3-13
+                  </p>
+                </div>
+                <p className="min-w-full relative shrink-0 text-[#667185] text-[16px] w-[min-content]" data-node-id="6:470">
+                  Venue: TEG Cusack Park
+                </p>
+                <p className="relative shrink-0 text-[#667185] text-[16px] whitespace-nowrap" data-node-id="6:471">
+                  Referee: Matthew Farrell
+                </p>
+              </div>
+              <div className="-translate-y-1/2 absolute content-stretch flex gap-[28px] items-center left-[40.86px] top-[calc(50%-0.15px)]" data-node-id="6:472">
+                <div className="h-[61.693px] relative shrink-0 w-[44.705px]" data-node-id="6:473" data-name="image 232">
+                  <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage232} />
+                </div>
+                <p className="[word-break:break-word] font-['Hanken_Grotesk:ExtraBold'] font-extrabold leading-[normal] relative shrink-0 text-[#0a1a37] text-[20px] whitespace-nowrap" data-node-id="6:474">
+                  Athlone GAA
+                </p>
+              </div>
+              <div className="-translate-y-1/2 absolute content-stretch flex gap-[28px] items-center left-[727px] top-1/2" data-node-id="6:475">
+                <p className="[word-break:break-word] font-['Hanken_Grotesk:ExtraBold'] font-extrabold leading-[normal] relative shrink-0 text-[#0a1a37] text-[20px] whitespace-nowrap" data-node-id="6:476">
+                  Roscommon GAA
+                </p>
+                <div className="relative shrink-0 size-[62px]" data-node-id="6:477" data-name="image 241">
+                  <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage241} />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="absolute bg-white content-stretch flex h-[45px] items-center justify-center left-[32px] overflow-clip rounded-[22.261px] shadow-[0px_4px_4px_0px_rgba(222,222,222,0.25)] top-[44px] w-[178px]" data-node-id="6:478">
+            <p className="[word-break:break-word] font-['Hanken_Grotesk:Regular'] font-normal leading-[0] relative shrink-0 text-[17.953px] text-black whitespace-nowrap" data-node-id="6:479">
+              <span className="leading-[normal]">{` `}</span>
+              <span className="font-['Hanken_Grotesk:Bold'] font-bold leading-[normal]">{`Fixtures & Results`}</span>
+            </p>
+          </div>
+        </div>
+        <div className="bg-[#f7f9fc] h-[824px] overflow-clip relative shrink-0 w-full" data-node-id="6:480" data-name="Desktop - 7">
+          <div className="-translate-x-1/2 absolute content-stretch flex flex-col gap-[8px] items-center left-[calc(50%+0.5px)] top-[39px] w-[655px]" data-node-id="6:481">
+            <div className="content-stretch flex gap-[4px] items-center relative shrink-0 w-full" data-node-id="6:482">
+              <p className="[word-break:break-word] font-['Hanken_Grotesk:SemiBold'] font-semibold leading-[normal] relative shrink-0 text-[#1d2739] text-[32px] whitespace-nowrap" data-node-id="6:483">{`Dedicated Coaches `}</p>
+              <div className="relative shrink-0 size-[34px]" data-node-id="6:484" data-name="download">
+                <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgDownload} />
+              </div>
+              <p className="[word-break:break-word] font-['Hanken_Grotesk:SemiBold'] font-semibold leading-[normal] relative shrink-0 text-[#1d2739] text-[32px] whitespace-nowrap" data-node-id="6:485">
+                Supporting Our Players
+              </p>
+            </div>
+            <p className="[word-break:break-word] font-['Inter:Regular'] font-normal leading-[1.5] not-italic relative shrink-0 text-[#475367] text-[16px] text-center w-[616px]" data-node-id="6:486">
+              Our coaches play a vital role in developing players and fostering a positive club environment. Each coach brings experience, commitment and a passion for supporting players at every level.
+            </p>
+          </div>
+          <div className="absolute contents left-[71px] top-[201px]" data-node-id="6:487">
+            <div className="absolute h-[304.275px] left-[71px] overflow-clip rounded-[16px] top-[240px] w-[303.013px]" data-node-id="6:488">
+              <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[16px] size-full" src={imgFrame1618868199} />
+              <div className="absolute bg-[rgba(31,31,31,0.36)] h-[90px] left-0 overflow-clip top-[214.12px] w-[303px]" data-node-id="6:489">
+                <div className="[word-break:break-word] absolute content-stretch flex flex-col items-start leading-[1.5] left-[19px] text-white top-[18px] w-[140px]" data-node-id="6:490">
+                  <p className="font-['Hanken_Grotesk:SemiBold'] font-semibold relative shrink-0 text-[18px] w-full" data-node-id="6:491">
+                    Peter Scott
+                  </p>
+                  <p className="font-['Hanken_Grotesk:Medium'] font-medium relative shrink-0 text-[16px] text-center w-full" data-node-id="6:492">
+                    Senior Team Coach
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="absolute h-[304.275px] left-[calc(25%+45.58px)] overflow-clip rounded-[16px] top-[336.85px] w-[303.013px]" data-node-id="6:493">
+              <div aria-hidden className="absolute inset-0 pointer-events-none rounded-[16px]">
+                <div className="absolute bg-white inset-0 rounded-[16px]" />
+                <img alt="" className="absolute max-w-none object-cover rounded-[16px] size-full" src={imgFrame1618868200} />
+              </div>
+              <div className="absolute bg-[rgba(31,31,31,0.36)] h-[90px] left-[0.42px] overflow-clip top-[214.28px] w-[303px]" data-node-id="6:494">
+                <div className="[word-break:break-word] absolute content-stretch flex flex-col items-start leading-[1.5] left-[19px] text-white top-[18px] w-[140px]" data-node-id="6:495">
+                  <p className="font-['Hanken_Grotesk:SemiBold'] font-semibold relative shrink-0 text-[18px] w-full" data-node-id="6:496">
+                    Michael Walsh
+                  </p>
+                  <p className="font-['Hanken_Grotesk:Medium'] font-medium relative shrink-0 text-[16px] text-center w-full" data-node-id="6:497">
+                    Junior Team Coach
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="absolute h-[304.275px] left-[calc(66.67%+107.06px)] overflow-clip rounded-[16px] top-[336.72px] w-[303.013px]" data-node-id="6:498">
+              <div aria-hidden className="absolute inset-0 pointer-events-none rounded-[16px]">
+                <div className="absolute bg-white inset-0 rounded-[16px]" />
+                <img alt="" className="absolute max-w-none object-cover rounded-[16px] size-full" src={imgFrame1618868202} />
+              </div>
+              <div className="absolute bg-[rgba(31,31,31,0.36)] h-[90px] left-[0.27px] overflow-clip top-[214.28px] w-[303px]" data-node-id="6:499">
+                <div className="[word-break:break-word] absolute content-stretch flex flex-col items-start leading-[1.5] left-[19px] text-white top-[18px] w-[140px]" data-node-id="6:500">
+                  <p className="font-['Hanken_Grotesk:SemiBold'] font-semibold min-w-full relative shrink-0 text-[18px] w-[min-content]" data-node-id="6:501">{`Fred O'Neil`}</p>
+                  <p className="font-['Hanken_Grotesk:Medium'] font-medium h-[23px] relative shrink-0 text-[16px] text-center w-[220px]" data-node-id="6:502">
+                    Underage Development Coach
+                    <br aria-hidden />
+                    <br aria-hidden />
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="absolute h-[304.275px] left-[calc(50%+20.15px)] overflow-clip rounded-[16px] top-[201px] w-[303.013px]" data-node-id="6:503">
+              <div aria-hidden className="absolute inset-0 pointer-events-none rounded-[16px]">
+                <div className="absolute bg-white inset-0 rounded-[16px]" />
+                <img alt="" className="absolute max-w-none object-cover rounded-[16px] size-full" src={imgFrame1618868201} />
+              </div>
+              <div className="absolute bg-[rgba(31,31,31,0.36)] h-[90px] left-[-0.15px] overflow-clip top-[214px] w-[303px]" data-node-id="6:504">
+                <div className="[word-break:break-word] absolute content-stretch flex flex-col items-start left-[19px] text-white top-[18px] w-[140px]" data-node-id="6:505">
+                  <p className="font-['Hanken_Grotesk:SemiBold'] font-semibold leading-[1.5] min-w-full relative shrink-0 text-[18px] w-[min-content]" data-node-id="6:506">
+                    Sarah O’Connor
+                  </p>
+                  <p className="font-['Hanken_Grotesk:Medium'] font-medium h-[20px] leading-[normal] relative shrink-0 text-[16px] text-center w-[160px]" data-node-id="6:507">
+                    Ladies Football Coach
+                    <br aria-hidden />
+                    <br aria-hidden />
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="bg-white h-[824px] overflow-clip relative rounded-[16px] shrink-0 w-[1416px]" data-node-id="6:508" data-name="Desktop - 8">
+          <div className="absolute bg-white content-stretch flex h-[45px] items-center justify-center left-[32px] overflow-clip rounded-[22.261px] shadow-[0px_4px_4px_0px_rgba(222,222,222,0.25)] top-[88px] w-[146px]" data-node-id="6:509">
+            <p className="[word-break:break-word] font-['Hanken_Grotesk:Regular'] font-normal leading-[normal] relative shrink-0 text-[17.953px] text-black whitespace-nowrap" data-node-id="6:510">
+              Summer Camp
+            </p>
+          </div>
+          <div className="absolute content-stretch flex flex-col gap-[8px] items-start left-[32px] top-[158px] w-[557px]" data-node-id="6:511">
+            <div className="grid-cols-[max-content] grid-rows-[max-content] inline-grid leading-[0] place-items-start relative shrink-0" data-node-id="6:512">
+              <p className="[word-break:break-word] col-1 font-['Hanken_Grotesk:SemiBold'] font-semibold leading-[normal] ml-0 mt-0 relative row-1 text-[#1d2739] text-[32px] whitespace-nowrap" data-node-id="6:513">
+                Athlone GAA Summer Camp
+              </p>
+            </div>
+            <p className="[word-break:break-word] font-['Inter:Regular'] font-normal leading-[1.5] min-w-full not-italic relative shrink-0 text-[#475367] text-[16px] text-justify w-[min-content]" data-node-id="6:514">
+              A fun and engaging summer programme where children learn new skills, stay active and build friendships in a safe and supportive environment.
+            </p>
+          </div>
+          <div className="absolute content-start flex flex-wrap gap-[16px] items-start left-[32px] top-[296px] w-[416px]" data-node-id="6:515">
+            <div className="h-[158px] overflow-clip relative rounded-[10.561px] shrink-0 w-[200px]" data-node-id="6:516">
+              <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[10.561px] size-full" src={imgFrame1618868203} />
+              <div className="absolute bg-[rgba(31,31,31,0.36)] h-[45px] left-0 overflow-clip top-[113px] w-[200px]" data-node-id="6:517">
+                <p className="[word-break:break-word] absolute font-['Inter:Medium'] font-medium leading-[1.45] left-[8px] not-italic text-[14px] text-white top-[8px] whitespace-nowrap" data-node-id="6:518">
+                  Official Camp Jersey
+                </p>
+              </div>
+            </div>
+            <div className="h-[158px] overflow-clip relative rounded-[10.561px] shrink-0 w-[200px]" data-node-id="6:519">
+              <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[10.561px] size-full" src={imgFrame1618868204} />
+              <div className="absolute bg-[rgba(31,31,31,0.36)] h-[46px] left-0 overflow-clip top-[112px] w-[200px]" data-node-id="6:520">
+                <p className="[word-break:break-word] absolute font-['Inter:Medium'] font-medium leading-[1.45] left-[8px] not-italic text-[14px] text-white top-[8px] whitespace-nowrap" data-node-id="6:521">
+                  Daily Coaching Sessions
+                </p>
+              </div>
+            </div>
+            <div className="h-[158px] overflow-clip relative rounded-[10.561px] shrink-0 w-[200px]" data-node-id="6:522">
+              <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[10.561px] size-full" src={imgFrame1618868205} />
+              <div className="absolute bg-[rgba(31,31,31,0.36)] h-[45px] left-0 overflow-clip top-[113px] w-[200px]" data-node-id="6:523">
+                <p className="[word-break:break-word] absolute font-['Inter:Medium'] font-medium leading-[1.45] left-[8px] not-italic text-[14px] text-white top-[8px] whitespace-nowrap" data-node-id="6:524">
+                  Activities and Games
+                </p>
+              </div>
+            </div>
+            <div className="h-[158px] overflow-clip relative rounded-[10.561px] shrink-0 w-[200px]" data-node-id="6:525">
+              <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[10.561px] size-full" src={imgFrame1618868206} />
+              <div className="absolute bg-[rgba(31,31,31,0.36)] h-[45px] left-0 overflow-clip top-[113px] w-[200px]" data-node-id="6:526">
+                <p className="[word-break:break-word] absolute font-['Inter:Medium'] font-medium leading-[1.45] left-[8px] not-italic text-[14px] text-white top-[8px] whitespace-nowrap" data-node-id="6:527">
+                  End of Camp Recognition
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className="absolute content-stretch flex flex-col gap-[24px] items-start left-[calc(50%+62px)] top-[179px] w-[496px]" data-node-id="6:528">
+            <div className="content-stretch flex gap-[16px] items-center relative shrink-0 w-full" data-node-id="6:529">
+              <div className="bg-white border border-[#d0d5dd] border-solid h-[206px] overflow-clip relative rounded-[16px] shrink-0 w-[240px]" data-node-id="6:530">
+                <div className="-translate-x-1/2 [word-break:break-word] absolute content-stretch flex flex-col gap-[16px] items-start left-[calc(50%+0.5px)] not-italic top-[24px] w-[217px]" data-node-id="6:531">
+                  <p className="font-['Inter:Semi_Bold'] font-semibold leading-[normal] relative shrink-0 text-[37px] text-black w-full" data-node-id="6:532" style={{ fontFeatureSettings: '"cv01" 1, "cv03" 1, "cv04" 1' }}>
+                    🎯
+                  </p>
+                  <div className="content-stretch flex flex-col gap-[4px] items-start leading-[1.45] relative shrink-0 w-full" data-node-id="6:533">
+                    <p className="font-['Inter:Semi_Bold'] font-semibold relative shrink-0 text-[16px] text-black w-full" data-node-id="6:534" style={{ fontFeatureSettings: '"cv01" 1, "cv03" 1, "cv04" 1' }}>
+                      Skill Development
+                    </p>
+                    <p className="font-['Inter:Regular'] font-normal relative shrink-0 text-[#475367] text-[14px] w-full" data-node-id="6:535" style={{ fontFeatureSettings: '"cv03" 1, "cv04" 1' }}>
+                      Participants develop core Gaelic football skills through structured coaching and age appropriate training sessions.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div className="bg-white border border-[#d0d5dd] border-solid h-[206px] overflow-clip relative rounded-[16px] shrink-0 w-[240px]" data-node-id="6:536">
+                <div className="-translate-x-1/2 [word-break:break-word] absolute content-stretch flex flex-col gap-[16px] items-start left-[calc(50%+0.5px)] not-italic top-[24px] w-[215px]" data-node-id="6:537">
+                  <p className="font-['Inter:Semi_Bold'] font-semibold leading-[normal] relative shrink-0 text-[37px] text-black w-full" data-node-id="6:538" style={{ fontFeatureSettings: '"cv01" 1, "cv03" 1, "cv04" 1' }}>
+                    👥
+                  </p>
+                  <div className="content-stretch flex flex-col gap-[4px] items-start leading-[1.45] relative shrink-0 w-full" data-node-id="6:539">
+                    <p className="font-['Inter:Semi_Bold'] font-semibold relative shrink-0 text-[16px] text-black w-full" data-node-id="6:540" style={{ fontFeatureSettings: '"cv01" 1, "cv03" 1, "cv04" 1' }}>
+                      Confidence and Teamwork
+                    </p>
+                    <p className="font-['Inter:Regular'] font-normal relative shrink-0 text-[#475367] text-[14px] w-full" data-node-id="6:541" style={{ fontFeatureSettings: '"cv03" 1, "cv04" 1' }}>
+                      The camp encourages teamwork, communication and self confidence in a positive and inclusive setting.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="content-stretch flex gap-[16px] items-center relative shrink-0 w-full" data-node-id="6:542">
+              <div className="bg-white border border-[#d0d5dd] border-solid h-[206px] overflow-clip relative rounded-[16px] shrink-0 w-[240px]" data-node-id="6:543">
+                <div className="[word-break:break-word] absolute content-stretch flex flex-col gap-[16px] items-start left-[13px] not-italic top-[24px] w-[212px]" data-node-id="6:544">
+                  <p className="font-['Inter:Semi_Bold'] font-semibold leading-[normal] relative shrink-0 text-[37px] text-black w-full" data-node-id="6:545" style={{ fontFeatureSettings: '"cv01" 1, "cv03" 1, "cv04" 1' }}>
+                    🏃
+                  </p>
+                  <div className="content-stretch flex flex-col gap-[4px] items-start leading-[1.45] relative shrink-0 w-full" data-node-id="6:546">
+                    <p className="font-['Inter:Semi_Bold'] font-semibold relative shrink-0 text-[16px] text-black w-full" data-node-id="6:547" style={{ fontFeatureSettings: '"cv01" 1, "cv03" 1, "cv04" 1' }}>{`Active and Healthy Fun `}</p>
+                    <p className="font-['Inter:Regular'] font-normal relative shrink-0 text-[#475367] text-[14px] w-full" data-node-id="6:548" style={{ fontFeatureSettings: '"cv03" 1, "cv04" 1' }}>
+                      Children stay active throughout the summer while enjoying games, drills and friendly competitions.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div className="bg-white border border-[#d0d5dd] border-solid h-[206px] overflow-clip relative rounded-[16px] shrink-0 w-[240px]" data-node-id="6:549">
+                <div className="-translate-x-1/2 [word-break:break-word] absolute content-stretch flex flex-col gap-[16px] items-start left-1/2 not-italic top-[24px] w-[212px]" data-node-id="6:550">
+                  <p className="font-['Inter:Semi_Bold'] font-semibold leading-[normal] relative shrink-0 text-[37px] text-black w-full" data-node-id="6:551" style={{ fontFeatureSettings: '"cv01" 1, "cv03" 1, "cv04" 1' }}>
+                    ❤️
+                  </p>
+                  <div className="content-stretch flex flex-col gap-[4px] items-start leading-[1.45] relative shrink-0 w-full" data-node-id="6:552">
+                    <p className="font-['Inter:Semi_Bold'] font-semibold relative shrink-0 text-[16px] text-black w-full" data-node-id="6:553" style={{ fontFeatureSettings: '"cv01" 1, "cv03" 1, "cv04" 1' }}>
+                      Community and Friendship
+                    </p>
+                    <p className="font-['Inter:Regular'] font-normal relative shrink-0 text-[#475367] text-[14px] w-full" data-node-id="6:554" style={{ fontFeatureSettings: '"cv03" 1, "cv04" 1' }}>
+                      The camp helps children build friendships and feel connected to the Athlone GAA community.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="bg-[#f7f9fc] h-[797px] overflow-clip relative shrink-0 w-full" data-node-id="6:555" data-name="Desktop - 9">
+          <div className="absolute bg-white content-stretch flex h-[45px] items-center justify-center left-[32px] overflow-clip rounded-[22.261px] shadow-[0px_4px_4px_0px_rgba(222,222,222,0.25)] top-[88px] w-[126px]" data-node-id="6:556">
+            <p className="[word-break:break-word] font-['Hanken_Grotesk:Regular'] font-normal leading-[normal] relative shrink-0 text-[17.953px] text-black whitespace-nowrap" data-node-id="6:557">
+              Testimonials
+            </p>
+          </div>
+          <div className="[word-break:break-word] absolute content-stretch flex flex-col gap-[8px] h-[105px] items-start left-[32px] top-[158px] w-[557px]" data-node-id="6:558">
+            <div className="content-stretch flex flex-[1_0_0] gap-[4px] items-center min-h-px relative w-[655px] whitespace-nowrap" data-node-id="6:559">
+              <p className="font-['Hanken_Grotesk:SemiBold'] font-semibold leading-[normal] relative shrink-0 text-[#1d2739] text-[32px]" data-node-id="6:560">{`What People Say `}</p>
+              <p className="font-['Inter:Medium'] font-medium leading-[1.45] not-italic relative shrink-0 text-[34px] text-black" data-node-id="6:561">
+                👍
+              </p>
+              <p className="font-['Hanken_Grotesk:SemiBold'] font-semibold leading-[normal] relative shrink-0 text-[#1d2739] text-[32px]" data-node-id="6:562">
+                About Athlone GAA
+              </p>
+            </div>
+            <p className="font-['Inter:Regular'] font-normal leading-[1.5] min-w-full not-italic relative shrink-0 text-[#475367] text-[16px] text-justify w-[min-content]" data-node-id="6:563">
+              Hear from players, parents and members who are part of our club and community.
+            </p>
+          </div>
+          <div className="absolute content-stretch flex gap-[40px] items-end left-[32px] top-[280px]" data-node-id="6:564">
+            <div className="content-stretch flex gap-[32px] items-center relative shrink-0" data-node-id="6:565">
+              <div className="h-[248px] relative rounded-[12.566px] shrink-0 w-[247px]" data-node-id="6:566">
+                <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[12.566px] size-full" src={imgFrame1618868203} />
+              </div>
+              <div className="content-stretch flex flex-col gap-[24px] items-start relative shrink-0 w-[535px]" data-node-id="6:567">
+                <div className="content-stretch flex flex-col gap-[8px] items-start relative shrink-0 w-full" data-node-id="6:568">
+                  <div className="content-stretch flex flex-col gap-[16px] items-start relative shrink-0 w-full" data-node-id="6:569">
+                    <div className="h-[22px] relative shrink-0 w-[29.751px]" data-node-id="6:570" data-name="image 234">
+                      <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage234} />
+                    </div>
+                    <p className="[word-break:break-word] font-['Inter:Medium'] font-medium h-[54px] leading-[1.5] min-w-full not-italic relative shrink-0 text-[#101928] text-[16px] w-[min-content]" data-node-id="6:571">
+                      Being part of this club has helped me grow in confidence and improve my skills. It really feels like a community.
+                      <br aria-hidden />
+                      <br aria-hidden />
+                    </p>
+                  </div>
+                  <div className="[word-break:break-word] content-stretch flex gap-[16px] items-center justify-center leading-[1.5] not-italic relative shrink-0 whitespace-nowrap" data-node-id="6:572">
+                    <p className="font-['Inter:Semi_Bold'] font-semibold relative shrink-0 text-[#101928] text-[16px]" data-node-id="6:573">
+                      Greg Eya
+                    </p>
+                    <p className="font-['Inter:Medium'] font-medium relative shrink-0 text-[#667185] text-[12px]" data-node-id="6:574">
+                      Youth Player
+                    </p>
+                  </div>
+                </div>
+                <div className="content-stretch flex gap-[8px] items-center relative shrink-0" data-node-id="6:575">
+                  <div className="bg-white overflow-clip relative rounded-[43.636px] shadow-[0px_4px_4px_0px_rgba(235,235,235,0.25)] shrink-0 size-[24px]" data-node-id="6:576">
+                    <div className="absolute left-[4px] size-[16px] top-[4px]" data-node-id="6:577" data-name="icon / arrow-left">
+                      <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIconArrowLeft} />
+                    </div>
+                  </div>
+                  <p className="[word-break:break-word] font-['Inter:Medium'] font-medium leading-[1.5] not-italic relative shrink-0 text-[#667185] text-[16px] whitespace-nowrap" data-node-id="6:578">
+                    1 / 5
+                  </p>
+                  <div className="flex items-center justify-center relative shrink-0" data-node-id="6:579">
+                    <div className="-scale-y-100 flex-none rotate-180">
+                      <div className="bg-white overflow-clip relative rounded-[43.636px] shadow-[0px_4px_4px_0px_rgba(235,235,235,0.25)] size-[24px]">
+                        <div className="absolute left-[4px] size-[16px] top-[4px]" data-node-id="6:580" data-name="icon / arrow-left">
+                          <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIconArrowLeft} />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="content-stretch flex gap-[24px] items-center relative shrink-0" data-node-id="6:581">
+              <div className="h-[156px] relative rounded-[12.566px] shrink-0 w-[139px]" data-node-id="6:582">
+                <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[12.566px] size-full" src={imgFrame1618868207} />
+              </div>
+              <div className="h-[156px] relative rounded-[12.566px] shrink-0 w-[139px]" data-node-id="6:583">
+                <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[12.566px] size-full" src={imgFrame1618868219} />
+              </div>
+              <div className="h-[156px] relative rounded-[12.566px] shrink-0 w-[139px]" data-node-id="6:584">
+                <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[12.566px] size-full" src={imgFrame1618868220} />
+              </div>
+              <div className="h-[156px] relative rounded-[12.566px] shrink-0 w-[139px]" data-node-id="6:585">
+                <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[12.566px] size-full" src={imgFrame1618868221} />
+              </div>
+            </div>
+          </div>
+          <div className="absolute bg-white border border-[rgba(235,235,235,0.75)] border-solid h-[46px] left-[32px] overflow-clip rounded-[22.261px] top-[568px] w-[232px]" data-node-id="6:586">
+            <div className="absolute content-stretch flex gap-[12px] items-center left-[17px] top-[6px]" data-node-id="6:587">
+              <p className="[word-break:break-word] font-['Hanken_Grotesk:Regular'] font-normal leading-[normal] relative shrink-0 text-[17.953px] text-black whitespace-nowrap" data-node-id="6:588">
+                Become a Member
+              </p>
+              <div className="bg-[#0a1a37] overflow-clip relative rounded-[60px] shrink-0 size-[33px]" data-node-id="6:589">
+                <div className="absolute left-[5px] size-[24px] top-[4px]" data-node-id="6:590" data-name="icon / arrow-up-right">
+                  <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIconArrowUpRight} />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="bg-[#f7f9fc] h-[424px] overflow-clip relative shrink-0 w-full" data-node-id="6:591" data-name="Desktop - 10">
+          <div className="absolute bg-[#050a14] h-[336px] left-[14px] overflow-clip rounded-[8px] top-[44px] w-[1412px]" data-node-id="6:592" data-name="Desktop - 11">
+            <div className="absolute h-[279px] left-[18px] top-[28px] w-[413px]" data-node-id="6:593" data-name="Subtract">
+              <img alt="" className="absolute block inset-0 max-w-none size-full" height="279" src={imgSubtract1} width="413" />
+            </div>
+            <div className="absolute content-stretch flex flex-col gap-[32px] items-start left-[calc(33.33%+0.33px)] top-[99px] w-[557px]" data-node-id="6:597">
+              <div className="[word-break:break-word] content-stretch flex flex-col gap-[8px] h-[77px] items-start relative shrink-0 w-full" data-node-id="6:598">
+                <p className="font-['Hanken_Grotesk:SemiBold'] font-semibold leading-[normal] relative shrink-0 text-[32px] text-white w-full" data-node-id="6:599">
+                  Stay connected with Athlone GAA
+                </p>
+                <p className="flex-[1_0_0] font-['Inter:Regular'] font-normal leading-[1.5] min-h-px not-italic relative text-[#f0f2f5] text-[16px] text-justify w-full" data-node-id="6:600">
+                  Get the latest club news, fixtures, events and updates straight to you.
+                </p>
+              </div>
+              <div className="bg-[rgba(249,250,251,0.08)] border border-[#d0d5dd] border-solid h-[40px] overflow-clip relative rounded-[32px] shrink-0 w-[252px]" data-node-id="6:601">
+                <div className="absolute bg-[#69c9f7] left-[213px] overflow-clip rounded-[60px] size-[33px] top-[2px]" data-node-id="6:602">
+                  <div className="absolute left-[5px] size-[24px] top-[4px]" data-node-id="6:603" data-name="icon / send-alt">
+                    <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIconSendAlt} />
+                  </div>
+                </div>
+                <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Inter:Regular'] font-normal leading-[1.2] left-[66.5px] not-italic text-[#98a2b3] text-[14px] text-center top-[10px] whitespace-nowrap" data-node-id="6:604">
+                  Enter your email
+                </p>
+              </div>
+              <p className="[word-break:break-word] font-['Inter:Regular'] font-normal leading-[0] not-italic relative shrink-0 text-[#d0d5dd] text-[14px] text-center whitespace-nowrap" data-node-id="6:605">
+                <span className="leading-[1.2]">{`We respect your `}</span>
+                <span className="[text-decoration-skip-ink:none] [text-underline-position:from-font] decoration-from-font decoration-solid leading-[1.2] underline">privacy</span>
+                <span className="leading-[1.2]">{` and only send relevant updates.`}</span>
+              </p>
+            </div>
+            <div className="absolute left-[calc(83.33%+96.33px)] rounded-[112.5px] size-[119px] top-[28px]" data-node-id="6:606" data-name="image 238">
+              <img alt="" className="absolute inset-0 max-w-none object-cover opacity-20 pointer-events-none rounded-[112.5px] size-full" src={imgImage238} />
+            </div>
+            <div className="absolute left-[calc(83.33%+35.33px)] rounded-[200px] size-[63px] top-[84px]" data-node-id="6:607" data-name="images 1">
+              <img alt="" className="absolute inset-0 max-w-none object-cover opacity-25 pointer-events-none rounded-[200px] size-full" src={imgImages3} />
+            </div>
+          </div>
+        </div>
+        <div className="bg-white h-[527px] overflow-clip relative rounded-[16px] shrink-0 w-[1444px]" data-node-id="6:608" data-name="Desktop - 17">
+          <div className="absolute content-stretch flex gap-[239px] items-start left-[32px] top-[60px]" data-node-id="6:609">
+            <div className="content-stretch flex flex-col gap-[16px] items-start relative shrink-0 w-[358px]" data-node-id="6:610">
+              <div className="bg-white h-[45.959px] overflow-clip relative rounded-[22.261px] shadow-[0px_4px_4px_0px_rgba(222,222,222,0.25)] shrink-0 w-[160.139px]" data-node-id="6:611">
+                <div className="-translate-x-1/2 absolute content-stretch flex gap-[5.745px] items-center left-1/2 top-[5.99px]" data-node-id="6:612">
+                  <div className="h-[33.693px] relative shrink-0 w-[24.415px]" data-node-id="6:613" data-name="image 232">
+                    <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage232} />
+                  </div>
+                  <p className="[word-break:break-word] font-['Hanken_Grotesk:ExtraBold'] font-extrabold leading-[normal] relative shrink-0 text-[#0a1a37] text-[17.953px] whitespace-nowrap" data-node-id="6:614">
+                    Athlone GAA
+                  </p>
+                </div>
+              </div>
+              <p className="[word-break:break-word] font-['Hanken_Grotesk:Regular'] font-normal leading-[normal] min-w-full relative shrink-0 text-[#475367] text-[16px] w-[min-content]" data-node-id="6:615">
+                Building community through sport and teamwork.
+              </p>
+            </div>
+            <div className="[word-break:break-word] content-stretch flex flex-col gap-[26px] items-start leading-[normal] not-italic relative shrink-0 text-[#344054] w-[100px]" data-node-id="6:616">
+              <p className="font-['Inter:Medium'] font-medium min-w-full relative shrink-0 text-[18px] w-[min-content]" data-node-id="6:617">
+                Quick Links
+              </p>
+              <div className="content-stretch flex flex-col font-['Inter:Regular'] font-normal gap-[16px] items-start relative shrink-0 text-[16px] w-[45px]" data-node-id="6:618">
+                <p className="min-w-full relative shrink-0 w-[min-content]" data-node-id="6:619">
+                  Home
+                </p>
+                <p className="relative shrink-0 whitespace-nowrap" data-node-id="6:620">
+                  About
+                </p>
+                <p className="relative shrink-0 whitespace-nowrap" data-node-id="6:621">
+                  Teams
+                </p>
+                <p className="relative shrink-0 whitespace-nowrap" data-node-id="6:622">
+                  Fixtures and Results
+                </p>
+                <p className="relative shrink-0 whitespace-nowrap" data-node-id="6:623">
+                  News
+                </p>
+              </div>
+            </div>
+            <div className="[word-break:break-word] content-stretch flex flex-col gap-[26px] items-start leading-[normal] not-italic relative shrink-0 text-[#344054] w-[100px]" data-node-id="6:624">
+              <p className="font-['Inter:Medium'] font-medium min-w-full relative shrink-0 text-[18px] w-[min-content]" data-node-id="6:625">
+                Club
+              </p>
+              <div className="content-stretch flex flex-col font-['Inter:Regular'] font-normal gap-[16px] items-start relative shrink-0 text-[16px] w-[45px] whitespace-nowrap" data-node-id="6:626">
+                <p className="relative shrink-0" data-node-id="6:627">
+                  Membership
+                </p>
+                <p className="relative shrink-0" data-node-id="6:628">
+                  Summer Camp
+                </p>
+                <p className="relative shrink-0" data-node-id="6:629">
+                  Gallery
+                </p>
+                <p className="relative shrink-0" data-node-id="6:630">
+                  Contact
+                </p>
+              </div>
+            </div>
+            <div className="content-stretch flex flex-col gap-[26px] items-start relative shrink-0 w-[100px]" data-node-id="6:631">
+              <p className="[word-break:break-word] font-['Inter:Medium'] font-medium leading-[normal] min-w-full not-italic relative shrink-0 text-[#344054] text-[18px] w-[min-content]" data-node-id="6:632">
+                Follow Us
+              </p>
+              <div className="content-stretch flex flex-col gap-[16px] items-start relative shrink-0 w-[45px]" data-node-id="6:633">
+                <div className="content-stretch flex gap-[8px] items-center justify-center relative shrink-0" data-node-id="6:634">
+                  <div className="relative shrink-0 size-[16px]" data-node-id="6:635" data-name="Social icons">
+                    <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgSocialIcons} />
+                  </div>
+                  <p className="[word-break:break-word] font-['Inter:Regular'] font-normal leading-[normal] not-italic relative shrink-0 text-[#344054] text-[16px] whitespace-nowrap" data-node-id="6:636">
+                    Facebook
+                  </p>
+                </div>
+                <div className="content-stretch flex gap-[8px] items-center justify-center relative shrink-0" data-node-id="6:637">
+                  <div className="overflow-clip relative shrink-0 size-[16px]" data-node-id="6:638" data-name="Social icons">
+                    <div className="absolute contents inset-[2.01%_1.72%_1.91%_2.19%]" data-node-id="I6:638;264:15412" data-name="Instagram logo">
+                      <div className="absolute inset-[2.01%_1.72%_1.91%_2.19%]" data-node-id="I6:638;264:15413" data-name="Logo icon - instagram">
+                        <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgLogoIconInstagram} />
+                      </div>
+                    </div>
+                  </div>
+                  <p className="[word-break:break-word] font-['Inter:Regular'] font-normal leading-[normal] not-italic relative shrink-0 text-[#344054] text-[16px] whitespace-nowrap" data-node-id="6:639">
+                    Instagram
+                  </p>
+                </div>
+                <div className="content-stretch flex gap-[8px] items-center justify-center relative shrink-0" data-node-id="6:640">
+                  <div className="relative shrink-0 size-[16px]" data-node-id="6:641" data-name="Social icons">
+                    <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgSocialIcons1} />
+                  </div>
+                  <p className="[word-break:break-word] font-['Inter:Regular'] font-normal leading-[normal] not-italic relative shrink-0 text-[#344054] text-[16px] whitespace-nowrap" data-node-id="6:642">
+                    Twitter
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <p className="[word-break:break-word] absolute font-['Inter:Regular'] font-normal leading-[normal] left-[32px] not-italic text-[#344054] text-[16px] top-[362px] whitespace-nowrap" data-node-id="6:643">
+            © 2026 Athlone GAA. All rights reserved.
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+=====
+
+SUPER CRITICAL: The generated React+Tailwind code MUST be converted to match the target project's technology stack and styling system.
+1. Analyze the target codebase to identify: technology stack, styling approach, component patterns, and design tokens
+2. Convert React syntax to the target framework/library
+3. Transform all Tailwind classes to the target styling system while preserving exact visual design
+4. Follow the project's existing patterns and conventions
+DO NOT install any Tailwind as a dependency unless the user instructs you to do so.
+
+
+=====
+
+Node ids have been added to the code as data attributes, e.g. `data-node-id="1:2"`.
+
+=====
+
+These styles are contained in the design: Neutral/Grey 50: #F9FAFB, Neutral/Grey 900: #101928, Paragraph/Small(Medium): Font(family: "Inter", style: Medium, size: 14, weight: 500, lineHeight: 1.4500000476837158, letterSpacing: 0), Paragraph/Medium(Semibold): Font(family: "Inter", style: Semi Bold, size: 16, weight: 600, lineHeight: 1.4500000476837158, letterSpacing: 0), Paragraph/Small: Font(family: "Inter", style: Regular, size: 14, weight: 400, lineHeight: 1.4500000476837158, letterSpacing: 0), Shade/Black: #000000.
+
+=====
+
+Images and SVGs will be stored as constants, e.g. const image = 'https://www.figma.com/api/mcp/asset/550e8400-e29b-41d4-a716-446655440000'. These constants will be used in the code as the source for the image, ex: <img src={image} />. Image assets are stored on a remote server for 7 days and can be fetched using the provided URLs until they expire.
