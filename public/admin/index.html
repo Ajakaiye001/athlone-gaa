@@ -216,6 +216,8 @@
           letter-spacing: 0.02em;
           color: var(--chalk);
         }
+        .pv-product-canvas--photo { padding: 0; overflow: hidden; }
+        .pv-product-canvas--photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
         .pv-product-canvas.jerseys { background: var(--navy); }
         .pv-product-canvas.balls { background: var(--leather); color: var(--navy-deep); }
         .pv-product-canvas.hurleys { background: var(--pitch); }
@@ -335,6 +337,7 @@
           var p = this.props.entry.get('data')
           var cat = p.get('category') || 'jerseys'
           var sizes = p.get('options')
+          var img = p.get('image')
           return h(
             'div',
             {},
@@ -346,7 +349,10 @@
                 'div',
                 { className: 'pv-product' },
                 p.get('badge') ? h('span', { className: 'pv-badge' }, p.get('badge')) : null,
-                h('div', { className: 'pv-product-canvas ' + cat }, ART_GLYPH[p.get('art')] || '·'),
+                img
+                  ? h('div', { className: 'pv-product-canvas pv-product-canvas--photo' },
+                      h('img', { src: this.props.getAsset(img).toString(), alt: '' }))
+                  : h('div', { className: 'pv-product-canvas ' + cat }, ART_GLYPH[p.get('art')] || '·'),
                 h(
                   'div',
                   { className: 'pv-product-body' },

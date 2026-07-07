@@ -5,5 +5,6 @@
   "category": "balls",
   "art": "sliotar",
   "desc": "Match-weight sliotars with raised rims. One for the game, two for the ditch.",
-  "order": 5
+  "order": 5,
+  "image": "/assets/imgImages2.png"
 }

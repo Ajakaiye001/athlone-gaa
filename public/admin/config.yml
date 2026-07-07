@@ -63,6 +63,7 @@ collections:
     fields:
       - { name: 'name', label: 'Name', widget: 'string' }
       - { name: 'price', label: 'Price (€)', widget: 'number', value_type: 'int', min: 0 }
+      - { name: 'image', label: 'Product photo', widget: 'image', required: false, hint: 'Real photo of the item. If left empty the tile shows the chalk drawing instead' }
       - name: 'category'
         label: 'Category'
         widget: 'select'

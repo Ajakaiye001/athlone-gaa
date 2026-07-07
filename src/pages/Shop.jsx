@@ -26,8 +26,12 @@ function ProductTile({ product, index }) {
       style={{ '--reveal-delay': `${(index % 3) * 0.08}s` }}
     >
       {product.badge && <span className="product-badge">{product.badge}</span>}
-      <div className="product-canvas">
-        <ProductArt kind={product.art} />
+      <div className={`product-canvas ${product.image ? 'product-canvas--photo' : ''}`}>
+        {product.image ? (
+          <img src={product.image} alt={product.name} loading="lazy" />
+        ) : (
+          <ProductArt kind={product.art} />
+        )}
       </div>
       <div className="product-info">
         <h3 className="display">{product.name}</h3>
@@ -199,8 +203,12 @@ function FeaturedProduct({ product }) {
 
   return (
     <article className="shop-hero grain reveal">
-      <div className="shop-hero-canvas">
-        <ProductArt kind={product.art} />
+      <div className={`shop-hero-canvas ${product.image ? 'shop-hero-canvas--photo' : ''}`}>
+        {product.image ? (
+          <img src={product.image} alt={product.name} />
+        ) : (
+          <ProductArt kind={product.art} />
+        )}
       </div>
       <div className="shop-hero-body">
         <span className="product-badge product-badge--hero">{product.badge}</span>
