@@ -1,0 +1,72 @@
+/* Hide the native pointer only on mouse devices, only once JS is live.
+   Keep the text caret inside form fields so typing still feels normal. */
+@media (pointer: fine) {
+  .has-ball-cursor,
+  .has-ball-cursor a,
+  .has-ball-cursor button,
+  .has-ball-cursor [role='button'],
+  .has-ball-cursor label,
+  .has-ball-cursor select,
+  .has-ball-cursor summary {
+    cursor: none;
+  }
+
+  .has-ball-cursor input,
+  .has-ball-cursor textarea {
+    cursor: text;
+  }
+}
+
+.ballcursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.25s var(--ease-out, ease);
+  will-change: transform;
+}
+
+.ballcursor.is-visible {
+  opacity: 1;
+}
+
+/* over a text field the ball gets out of the way of the caret */
+.ballcursor.is-text {
+  opacity: 0;
+}
+
+.ballcursor-ball {
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  transition:
+    width 0.2s var(--ease-out, ease),
+    height 0.2s var(--ease-out, ease);
+}
+
+.ballcursor-ball svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+  filter: drop-shadow(0 3px 5px rgba(11, 21, 38, 0.4));
+}
+
+/* grow over anything clickable */
+.ballcursor.is-hover .ballcursor-ball {
+  width: 42px;
+  height: 42px;
+}
+
+/* squash on click, like a kick */
+.ballcursor.is-kick .ballcursor-ball {
+  width: 22px;
+  height: 22px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ballcursor-ball {
+    transition: none;
+  }
+}

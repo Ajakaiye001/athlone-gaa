@@ -3,6 +3,7 @@ import { useEffect } from 'react'
 import { ShopProvider } from './context/ShopContext.jsx'
 import PageWipe from './components/PageWipe.jsx'
 import ScrollProgress from './components/ScrollProgress.jsx'
+import BallCursor from './components/BallCursor.jsx'
 import Home from './pages/Home.jsx'
 import Fixtures from './pages/Fixtures.jsx'
 import News from './pages/News.jsx'
@@ -23,6 +24,7 @@ export default function App() {
       <ScrollToTop />
       <ScrollProgress />
       <PageWipe />
+      <BallCursor />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/fixtures" element={<Fixtures />} />
