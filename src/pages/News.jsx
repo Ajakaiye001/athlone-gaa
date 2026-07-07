@@ -3,15 +3,13 @@ import PageHeader from './PageHeader.jsx'
 import Newsletter from '../components/Newsletter.jsx'
 import Footer from '../components/Footer.jsx'
 import useReveal from '../hooks/useReveal.js'
-import useContent from '../hooks/useContent.js'
-import { news } from '../data/news.js'
+import { news as items } from '../content.js'
 import './News.css'
 
 const CATEGORIES = ['All', 'Match Report', 'Club News', 'Team News', 'Fundraising']
 
 export default function News() {
   const ref = useReveal({ threshold: 0.05 })
-  const items = useContent('news', news)
   const [category, setCategory] = useState('All')
   const visible = category === 'All' ? items : items.filter((n) => n.category === category)
   const [featured, ...rest] = visible

@@ -1,0 +1,15 @@
+{
+  "id": "away-jersey",
+  "name": "Away Jersey 2026",
+  "price": 65,
+  "category": "jerseys",
+  "art": "jersey-away",
+  "desc": "Chalk white with a navy chest band. For the days the colours clash.",
+  "options": [
+    "S",
+    "M",
+    "L",
+    "XL"
+  ],
+  "order": 1
+}

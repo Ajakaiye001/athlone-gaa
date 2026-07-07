@@ -4,13 +4,10 @@ import Newsletter from '../components/Newsletter.jsx'
 import Footer from '../components/Footer.jsx'
 import ProductArt from '../components/ProductArt.jsx'
 import useReveal from '../hooks/useReveal.js'
-import useContent from '../hooks/useContent.js'
 import { useShop } from '../context/ShopContext.jsx'
-import { CATEGORIES, products as bundledProducts } from '../data/shop.js'
+import { CATEGORIES } from '../data/shop.js'
+import { products } from '../content.js'
 import './Shop.css'
-
-const slug = (s) =>
-  s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')
 
 function ProductTile({ product, index }) {
   const { add } = useShop()
@@ -139,16 +136,12 @@ function KitBag() {
 export default function Shop() {
   const ref = useReveal({ threshold: 0.05 })
   const [category, setCategory] = useState('all')
-  const raw = useContent('shop', bundledProducts)
-
-  // CMS editors may omit ids; derive one from the name so the cart still works
-  const products = useMemo(() => raw.map((p) => ({ ...p, id: p.id || slug(p.name) })), [raw])
 
   const featured = products.find((p) => p.featured)
   const showFeatured = category === 'all' || featured?.category === category
   const visible = useMemo(
     () => products.filter((p) => category === 'all' || p.category === category),
-    [products, category],
+    [category],
   )
 
   return (

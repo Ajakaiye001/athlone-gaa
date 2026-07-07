@@ -1,0 +1,9 @@
+{
+  "id": "training-football",
+  "name": "Training Football",
+  "price": 22,
+  "category": "balls",
+  "art": "football",
+  "desc": "Size 4 trainer that survives wet grass, wall sessions and the dog.",
+  "order": 4
+}

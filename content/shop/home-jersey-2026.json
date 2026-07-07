@@ -1,0 +1,17 @@
+{
+  "art": "jersey",
+  "badge": "NEW SEASON",
+  "price": 65,
+  "name": "Home Jersey 2026",
+  "featured": true,
+  "desc": "Navy and chalk hoops, embroidered crest. The one worn on county final day.",
+  "id": "home-jersey",
+  "category": "jerseys",
+  "options": [
+    "S",
+    "M",
+    "L",
+    "XL"
+  ],
+  "order": 0
+}

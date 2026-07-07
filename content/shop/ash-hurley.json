@@ -1,0 +1,16 @@
+{
+  "id": "ash-hurley",
+  "name": "Ash Hurley",
+  "price": 40,
+  "category": "hurleys",
+  "art": "hurley",
+  "badge": "HAND MADE",
+  "desc": "Irish ash, hand-shaped bás, balanced for striking off both sides.",
+  "options": [
+    "30\"",
+    "32\"",
+    "34\"",
+    "36\""
+  ],
+  "order": 6
+}

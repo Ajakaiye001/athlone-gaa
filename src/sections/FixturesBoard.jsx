@@ -1,7 +1,7 @@
 import { useMemo, useState } from 'react'
 import useReveal from '../hooks/useReveal.js'
-import useContent from '../hooks/useContent.js'
-import { MONTHS, fixtures as bundledFixtures } from '../data/fixtures.js'
+import { MONTHS } from '../data/fixtures.js'
+import { fixtures } from '../content.js'
 import FixtureCard from '../components/FixtureCard.jsx'
 import './FixturesBoard.css'
 
@@ -13,7 +13,6 @@ const CODES = [
 
 export default function FixturesBoard() {
   const ref = useReveal({ threshold: 0.08 })
-  const fixtures = useContent('fixtures', bundledFixtures)
   const [month, setMonth] = useState('March')
   const [code, setCode] = useState('both')
   const [showPrevious, setShowPrevious] = useState(false)

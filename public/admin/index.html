@@ -205,6 +205,7 @@
           grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
           gap: 16px;
         }
+        .pv-shop--single { grid-template-columns: minmax(200px, 300px); }
         .pv-product { border: 3px solid var(--ink); background: #fbfaf5; position: relative; }
         .pv-product-canvas {
           height: 92px;
@@ -296,37 +297,32 @@
         return h('p', { className: 'pv-banner' }, ['LIVE PREVIEW · AS THE PARISH SEES IT · ', h('b', { key: 'b' }, label)])
       }
 
-      /* ---------- News preview ---------- */
+      /* ---------- News preview: one article ---------- */
       var NewsPreview = createClass({
         render: function () {
-          var entry = this.props.entry
-          var getAsset = this.props.getAsset
-          var items = entry.getIn(['data', 'items'])
-          var list = items ? items.toArray() : []
+          var data = this.props.entry.get('data')
+          var img = data.get('image')
           return h(
             'div',
             {},
             Banner('NEWS PAGE'),
-            list.map(function (item, i) {
-              var img = item.get('image')
-              return h(
-                'article',
-                { className: 'pv-news', key: i },
-                img
-                  ? h('img', { src: getAsset(img).toString() })
-                  : h('div', { className: 'pv-news-noimg' }, 'NO PHOTO'),
-                h(
-                  'div',
-                  {},
-                  h('p', { className: 'pv-meta' }, [
-                    (item.get('category') || 'CATEGORY') + ' ',
-                    h('span', { key: 's' }, '· ' + (item.get('date') || 'DATE')),
-                  ]),
-                  h('h3', {}, item.get('title') || 'Headline goes here'),
-                  h('p', {}, item.get('excerpt') || ''),
-                ),
-              )
-            }),
+            h(
+              'article',
+              { className: 'pv-news' },
+              img
+                ? h('img', { src: this.props.getAsset(img).toString() })
+                : h('div', { className: 'pv-news-noimg' }, 'NO PHOTO'),
+              h(
+                'div',
+                {},
+                h('p', { className: 'pv-meta' }, [
+                  (data.get('category') || 'CATEGORY') + ' ',
+                  h('span', { key: 's' }, '· ' + (data.get('date') || 'DATE')),
+                ]),
+                h('h3', {}, data.get('title') || 'Headline goes here'),
+                h('p', {}, data.get('excerpt') || ''),
+              ),
+            ),
           )
         },
       })
@@ -336,46 +332,43 @@
 
       var ShopPreview = createClass({
         render: function () {
-          var items = this.props.entry.getIn(['data', 'items'])
-          var list = items ? items.toArray() : []
+          var p = this.props.entry.get('data')
+          var cat = p.get('category') || 'jerseys'
+          var sizes = p.get('options')
           return h(
             'div',
             {},
             Banner('CLUB SHOP'),
             h(
               'div',
-              { className: 'pv-shop' },
-              list.map(function (p, i) {
-                var cat = p.get('category') || 'jerseys'
-                var sizes = p.get('options')
-                return h(
+              { className: 'pv-shop pv-shop--single' },
+              h(
+                'div',
+                { className: 'pv-product' },
+                p.get('badge') ? h('span', { className: 'pv-badge' }, p.get('badge')) : null,
+                h('div', { className: 'pv-product-canvas ' + cat }, ART_GLYPH[p.get('art')] || '·'),
+                h(
                   'div',
-                  { className: 'pv-product', key: i },
-                  p.get('badge') ? h('span', { className: 'pv-badge' }, p.get('badge')) : null,
-                  h('div', { className: 'pv-product-canvas ' + cat }, ART_GLYPH[p.get('art')] || '·'),
-                  h(
-                    'div',
-                    { className: 'pv-product-body' },
-                    h('h3', {}, p.get('name') || 'Product name'),
-                    h('p', {}, p.get('desc') || ''),
-                    sizes && sizes.size
-                      ? h(
-                          'div',
-                          { className: 'pv-sizes' },
-                          sizes.toArray().map(function (s, j) {
-                            var label = ''
-                            if (typeof s === 'string') label = s
-                            else if (s && typeof s.get === 'function') label = s.get('size') || ''
-                            else if (s != null) label = String(s)
-                            return h('span', { key: j }, label || '·')
-                          }),
-                        )
-                      : null,
-                    h('span', { className: 'pv-price' }, '€' + (p.get('price') != null ? p.get('price') : '—')),
-                    p.get('featured') ? h('span', { className: 'pv-featured' }, '★ FEATURED PRODUCT') : null,
-                  ),
-                )
-              }),
+                  { className: 'pv-product-body' },
+                  h('h3', {}, p.get('name') || 'Product name'),
+                  h('p', {}, p.get('desc') || ''),
+                  sizes && sizes.size
+                    ? h(
+                        'div',
+                        { className: 'pv-sizes' },
+                        sizes.toArray().map(function (s, j) {
+                          var label = ''
+                          if (typeof s === 'string') label = s
+                          else if (s && typeof s.get === 'function') label = s.get('size') || ''
+                          else if (s != null) label = String(s)
+                          return h('span', { key: j }, label || '·')
+                        }),
+                      )
+                    : null,
+                  h('span', { className: 'pv-price' }, '€' + (p.get('price') != null ? p.get('price') : '—')),
+                  p.get('featured') ? h('span', { className: 'pv-featured' }, '★ FEATURED PRODUCT') : null,
+                ),
+              ),
             ),
           )
         },
@@ -384,8 +377,8 @@
       /* ---------- Fixtures preview ---------- */
       var FixturesPreview = createClass({
         render: function () {
-          var items = this.props.entry.getIn(['data', 'items'])
-          var list = items ? items.toArray() : []
+          var f = this.props.entry.get('data')
+          var played = !!f.get('played')
           return h(
             'div',
             {},
@@ -393,33 +386,30 @@
             h(
               'div',
               { className: 'pv-board' },
-              list.map(function (f, i) {
-                var played = !!f.get('played')
-                return h(
-                  'div',
-                  { className: 'pv-game', key: i },
-                  h('div', { className: 'pv-game-meta' }, [
-                    h('i', { key: 'd' }, f.get('date') || 'MATCH DAY'),
-                    h('em', { key: 'c' }, f.get('competition') || 'Competition'),
-                  ]),
-                  h('div', { className: 'pv-game-line' }, [
-                    h('span', { className: 'pv-team', key: 'h' }, 'Athlone'),
-                    played
-                      ? h('span', { className: 'pv-score', key: 's' }, [
-                          f.get('homeScore') || '·',
-                          h('i', { key: 'sep' }, ' : '),
-                          f.get('awayScore') || '·',
-                        ])
-                      : h('span', { className: 'pv-score next', key: 's' }, '● ' + (f.get('throwIn') || 'TBC')),
-                    h('span', { className: 'pv-team away', key: 'a' }, 'Roscommon'),
-                  ]),
-                  h('div', { className: 'pv-game-foot' }, [
-                    h('span', { key: 'v' }, f.get('venue') || 'Venue'),
-                    h('span', { key: 'r' }, 'REF · ' + (f.get('referee') || 'TBC')),
-                    h('span', { key: 'st' }, played ? 'FULL TIME' : 'UPCOMING'),
-                  ]),
-                )
-              }),
+              h(
+                'div',
+                { className: 'pv-game' },
+                h('div', { className: 'pv-game-meta' }, [
+                  h('i', { key: 'd' }, f.get('date') || 'MATCH DAY'),
+                  h('em', { key: 'c' }, f.get('competition') || 'Competition'),
+                ]),
+                h('div', { className: 'pv-game-line' }, [
+                  h('span', { className: 'pv-team', key: 'h' }, 'Athlone'),
+                  played
+                    ? h('span', { className: 'pv-score', key: 's' }, [
+                        f.get('homeScore') || '·',
+                        h('i', { key: 'sep' }, ' : '),
+                        f.get('awayScore') || '·',
+                      ])
+                    : h('span', { className: 'pv-score next', key: 's' }, '● ' + (f.get('throwIn') || 'TBC')),
+                  h('span', { className: 'pv-team away', key: 'a' }, 'Roscommon'),
+                ]),
+                h('div', { className: 'pv-game-foot' }, [
+                  h('span', { key: 'v' }, f.get('venue') || 'Venue'),
+                  h('span', { key: 'r' }, 'REF · ' + (f.get('referee') || 'TBC')),
+                  h('span', { key: 'st' }, played ? 'FULL TIME' : 'UPCOMING'),
+                ]),
+              ),
             ),
           )
         },

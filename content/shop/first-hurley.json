@@ -1,0 +1,14 @@
+{
+  "id": "first-hurley",
+  "name": "First Hurley",
+  "price": 25,
+  "category": "hurleys",
+  "art": "hurley",
+  "desc": "Lighter ash for small hands learning the swing. Sized for ages 5 to 10.",
+  "options": [
+    "20\"",
+    "24\"",
+    "26\""
+  ],
+  "order": 7
+}

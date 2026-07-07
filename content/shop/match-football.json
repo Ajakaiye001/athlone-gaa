@@ -1,0 +1,10 @@
+{
+  "id": "match-football",
+  "name": "Match Football",
+  "price": 35,
+  "category": "balls",
+  "art": "football",
+  "badge": "CLUB SPEC",
+  "desc": "Size 5 match ball, the same spec our seniors play with every Sunday.",
+  "order": 3
+}

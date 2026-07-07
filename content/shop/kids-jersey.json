@@ -1,0 +1,14 @@
+{
+  "name": "Kid's jersey",
+  "price": 20,
+  "category": "jerseys",
+  "art": "jersey",
+  "desc": "For your kid",
+  "options": [
+    "S",
+    "M",
+    "L",
+    "XL"
+  ],
+  "order": 9
+}
