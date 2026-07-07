@@ -12,19 +12,26 @@ npm run dev          # site on http://localhost:5185
 
 ## Edit content (news, shop, fixtures)
 
-Content lives in `public/content/*.json` and is edited through a form-based
-admin panel — no code needed.
+Every news item, product and game is its own file in `content/`, edited
+through a form-based admin panel — no code needed.
 
 ```bash
 npm run dev          # terminal 1: the site
-npm run cms          # terminal 2: the CMS backend
+npm run cms          # terminal 2: the CMS backend (git mode)
 ```
 
-Then open **http://localhost:5185/admin/index.html** and pick News, Shop or
-Fixtures & Results. Hitting **Publish** writes the change straight into
-`public/content/` (and commits it to git), and the site picks it up on refresh.
+Then open **http://localhost:5185/admin/index.html**. Each section has a
+"New ..." button that opens a blank form with a live preview.
 
-Photos uploaded in the CMS land in `public/uploads/`.
+**Save vs Publish:** hitting **Save** stores the change as a draft on the
+Workflow board (Drafts → In Review → Ready); nothing is live yet. **Publish**
+merges it into the site and commits to git. Editing an already-published entry
+works the same way: save a draft, publish when happy.
+
+Two things to know:
+- The CMS backend needs a **clean git tree** — if a save fails with an API
+  error, commit or stash your own code changes first.
+- Photos uploaded in the CMS land in `public/uploads/`.
 
 ## Going live
 
