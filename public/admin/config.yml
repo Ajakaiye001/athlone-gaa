@@ -82,7 +82,7 @@ collections:
           - { label: 'Sliotar', value: 'sliotar' }
           - { label: 'Hurley', value: 'hurley' }
       - { name: 'badge', label: 'Corner badge', widget: 'string', required: false, hint: 'Short label like NEW SEASON or HAND MADE' }
-      - { name: 'link', label: "O'Neills product link", widget: 'string', required: false, hint: "Paste the O'Neills store URL for official kit. If set, the button becomes 'Buy on O'Neills' instead of the clubhouse kit bag" }
+      - { name: 'link', label: "O'Neills product link", widget: 'string', required: false, hint: "Optional. Link to this exact item on O'Neills. If left blank, the Buy button falls back to the club store URL in Site Settings" }
       - { name: 'desc', label: 'Description', widget: 'text' }
       - name: 'options'
         label: 'Sizes'

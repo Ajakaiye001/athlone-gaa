@@ -1,6 +1,5 @@
 import { Routes, Route, useLocation } from 'react-router-dom'
 import { useEffect } from 'react'
-import { ShopProvider } from './context/ShopContext.jsx'
 import PageWipe from './components/PageWipe.jsx'
 import ScrollProgress from './components/ScrollProgress.jsx'
 import BallCursor from './components/BallCursor.jsx'
@@ -20,7 +19,7 @@ function ScrollToTop() {
 
 export default function App() {
   return (
-    <ShopProvider>
+    <>
       <ScrollToTop />
       <ScrollProgress />
       <PageWipe />
@@ -35,6 +34,6 @@ export default function App() {
         <Route path="/shop" element={<Shop />} />
         <Route path="*" element={<Home />} />
       </Routes>
-    </ShopProvider>
+    </>
   )
 }

@@ -218,9 +218,10 @@
         }
         .pv-product-canvas--photo { padding: 0; overflow: hidden; }
         .pv-product-canvas--photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
-        .pv-product-canvas.jerseys { background: var(--navy); }
+        .pv-product-canvas--icon svg { width: 62px; height: 68px; display: block; }
+        .pv-product-canvas.jerseys { background: var(--navy); color: var(--chalk); }
         .pv-product-canvas.balls { background: var(--leather); color: var(--navy-deep); }
-        .pv-product-canvas.hurleys { background: var(--pitch); }
+        .pv-product-canvas.hurleys { background: var(--pitch); color: var(--chalk); }
         .pv-badge {
           position: absolute; top: 10px; right: -3px;
           background: var(--leather); color: var(--navy-deep);
@@ -329,8 +330,34 @@
         },
       })
 
-      /* ---------- Shop preview ---------- */
-      var ART_GLYPH = { jersey: '👕', 'jersey-away': '👕', football: '🏐', sliotar: '🥎', hurley: '🏑' }
+      /* ---------- Shop preview ----------
+         Chalk line icons matching ProductArt on the live site (no emoji). */
+      var svgIcon = function (inner) {
+        return (
+          '<svg viewBox="0 0 100 108" fill="none" stroke="currentColor" stroke-width="2.6" ' +
+          'stroke-linecap="round" stroke-linejoin="round">' + inner + '</svg>'
+        )
+      }
+      var ART_SVG = {
+        jersey: svgIcon(
+          '<path d="M35 22 L20 30 L14 48 L26 53 L28 44 L28 92 L72 92 L72 44 L74 53 L86 48 L80 30 L65 22 C60 30 40 30 35 22 Z"/>' +
+            '<path d="M28 60 L72 60 M28 72 L72 72"/><circle cx="41" cy="40" r="4.5"/>',
+        ),
+        'jersey-away': svgIcon(
+          '<path d="M35 22 L20 30 L14 48 L26 53 L28 44 L28 92 L72 92 L72 44 L74 53 L86 48 L80 30 L65 22 C60 30 40 30 35 22 Z"/>' +
+            '<path d="M28 52 L72 52 L72 64 L28 64 Z"/><circle cx="41" cy="40" r="4.5"/>',
+        ),
+        football: svgIcon(
+          '<circle cx="50" cy="57" r="34"/><path d="M22 44 C38 52 62 52 78 44 M22 70 C38 62 62 62 78 70 M50 23 L50 91"/>',
+        ),
+        sliotar: svgIcon(
+          '<circle cx="50" cy="57" r="26"/><path d="M32 39 C44 50 44 64 32 75 M68 39 C56 50 56 64 68 75"/>',
+        ),
+        hurley: svgIcon(
+          '<path d="M58 14 L52 68 C50 80 42 88 32 90 C22 92 16 84 18 76 C20 68 30 64 38 66 C46 68 48 60 49 52 L54 13 Z"/>' +
+            '<path d="M55 26 L60 27"/>',
+        ),
+      }
 
       var ShopPreview = createClass({
         render: function () {
@@ -352,7 +379,10 @@
                 img
                   ? h('div', { className: 'pv-product-canvas pv-product-canvas--photo' },
                       h('img', { src: this.props.getAsset(img).toString(), alt: '' }))
-                  : h('div', { className: 'pv-product-canvas ' + cat }, ART_GLYPH[p.get('art')] || '·'),
+                  : h('div', {
+                      className: 'pv-product-canvas pv-product-canvas--icon ' + cat,
+                      dangerouslySetInnerHTML: { __html: ART_SVG[p.get('art')] || ART_SVG.football },
+                    }),
                 h(
                   'div',
                   { className: 'pv-product-body' },
