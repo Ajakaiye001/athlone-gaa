@@ -6,13 +6,30 @@ import ProductArt from '../components/ProductArt.jsx'
 import useReveal from '../hooks/useReveal.js'
 import { useShop } from '../context/ShopContext.jsx'
 import { CATEGORIES } from '../data/shop.js'
-import { products } from '../content.js'
+import { products, settings } from '../content.js'
 import './Shop.css'
 
-function ProductTile({ product, index }) {
+// An official-kit product links out to O'Neills; everything else uses the
+// clubhouse kit bag. A product opts in by carrying a `link`.
+const oneillsLink = (product) => product.link || null
+
+function BuyControl({ product, option, chalk }) {
   const { add } = useShop()
-  const [option, setOption] = useState(product.options?.[0] ?? null)
   const [added, setAdded] = useState(false)
+  const link = oneillsLink(product)
+
+  if (link) {
+    return (
+      <a
+        className={`stamp product-add ${chalk ? 'stamp--leather' : ''}`}
+        href={link}
+        target="_blank"
+        rel="noreferrer"
+      >
+        Buy on O&rsquo;Neills <span className="stamp-arrow">↗</span>
+      </a>
+    )
+  }
 
   function handleAdd() {
     add(product, option)
@@ -21,11 +38,26 @@ function ProductTile({ product, index }) {
   }
 
   return (
+    <button
+      className={`stamp product-add ${chalk ? 'stamp--leather' : ''} ${added ? 'is-added' : ''}`}
+      onClick={handleAdd}
+    >
+      {added ? 'In the bag ✓' : 'Add to bag'}
+    </button>
+  )
+}
+
+function ProductTile({ product, index }) {
+  const [option, setOption] = useState(product.options?.[0] ?? null)
+  const official = !!oneillsLink(product)
+
+  return (
     <article
       className={`product-tile product-tile--${product.category} reveal`}
       style={{ '--reveal-delay': `${(index % 3) * 0.08}s` }}
     >
       {product.badge && <span className="product-badge">{product.badge}</span>}
+      {official && <span className="product-official">O&rsquo;NEILLS OFFICIAL</span>}
       <div className={`product-canvas ${product.image ? 'product-canvas--photo' : ''}`}>
         {product.image ? (
           <img src={product.image} alt={product.name} loading="lazy" />
@@ -55,9 +87,7 @@ function ProductTile({ product, index }) {
 
         <div className="product-buy">
           <span className="product-price">€{product.price}</span>
-          <button className={`stamp product-add ${added ? 'is-added' : ''}`} onClick={handleAdd}>
-            {added ? 'In the bag ✓' : 'Add to bag'}
-          </button>
+          <BuyControl product={product} option={option} />
         </div>
       </div>
     </article>
@@ -154,8 +184,25 @@ export default function Shop() {
         no="07"
         kicker="CLUB SHOP · EVERY PURCHASE FUNDS THE CLUB"
         title="Wear the Crest"
-        lead="Jerseys, balls and hurleys, picked by the people who use them every week. Collect from the clubhouse; every euro goes back to the pitch."
+        lead="Official kit is made by O'Neills and shipped from their club store. Balls, hurleys and extras are stocked at the clubhouse. Either way, every euro goes back to the pitch."
       />
+
+      {settings.oneillsUrl && (
+        <a
+          className="oneills-banner"
+          href={settings.oneillsUrl}
+          target="_blank"
+          rel="noreferrer"
+        >
+          <span className="oneills-banner-mark">O&rsquo;NEILLS</span>
+          <span className="oneills-banner-text">
+            Official Athlone GAA teamwear store · jerseys, training gear, leisurewear
+          </span>
+          <span className="oneills-banner-cta">
+            Shop the full range <span className="stamp-arrow">↗</span>
+          </span>
+        </a>
+      )}
 
       <section className="shop container" ref={ref}>
         <div className="shop-filters" role="tablist" aria-label="Category">
@@ -191,15 +238,7 @@ export default function Shop() {
 }
 
 function FeaturedProduct({ product }) {
-  const { add } = useShop()
   const [option, setOption] = useState(product.options?.[0] ?? null)
-  const [added, setAdded] = useState(false)
-
-  function handleAdd() {
-    add(product, option)
-    setAdded(true)
-    setTimeout(() => setAdded(false), 1200)
-  }
 
   return (
     <article className="shop-hero grain reveal">
@@ -229,9 +268,7 @@ function FeaturedProduct({ product }) {
         </div>
         <div className="product-buy">
           <span className="product-price product-price--hero">€{product.price}</span>
-          <button className={`stamp stamp--leather ${added ? 'is-added' : ''}`} onClick={handleAdd}>
-            {added ? 'In the bag ✓' : 'Add to bag'}
-          </button>
+          <BuyControl product={product} option={option} chalk />
         </div>
       </div>
     </article>

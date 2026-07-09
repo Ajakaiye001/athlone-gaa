@@ -421,9 +421,60 @@
         },
       })
 
+      /* ---------- Sponsors preview: a perimeter board ---------- */
+      CMS.registerPreviewStyle(
+        `
+        .pv-sponsor-wrap { display: grid; place-items: center; padding: 20px 0; }
+        .pv-sponsor-label {
+          font-family: 'Spline Sans Mono', monospace;
+          font-size: 11px; font-weight: 700; letter-spacing: 0.2em;
+          text-transform: uppercase; color: #cf9445; margin-bottom: 12px;
+        }
+        .pv-sponsor-board {
+          display: grid; place-items: center;
+          background: #f3f6ef; border: 2px solid #22302a;
+          padding: 22px 32px; min-height: 96px; min-width: 240px; text-align: center;
+        }
+        .pv-sponsor-board.principal { min-width: 320px; min-height: 140px; border-width: 3px; box-shadow: 8px 8px 0 0 #22302a; }
+        .pv-sponsor-board img { max-height: 80px; max-width: 260px; object-fit: contain; }
+        .pv-sponsor-name {
+          font-family: 'Anton', sans-serif; text-transform: uppercase;
+          color: #22302a; font-size: 26px; line-height: 0.95;
+        }
+        .pv-sponsor-board.principal .pv-sponsor-name { font-size: 40px; }
+        `,
+        { raw: true },
+      )
+
+      var SponsorPreview = createClass({
+        render: function () {
+          var s = this.props.entry.get('data')
+          var tier = s.get('tier') || 'partner'
+          var logo = s.get('logo')
+          return h(
+            'div',
+            {},
+            Banner('SPONSOR BOARDS'),
+            h(
+              'div',
+              { className: 'pv-sponsor-wrap' },
+              h('div', { className: 'pv-sponsor-label' }, tier + ' sponsor'),
+              h(
+                'div',
+                { className: 'pv-sponsor-board ' + (tier === 'principal' ? 'principal' : '') },
+                logo
+                  ? h('img', { src: this.props.getAsset(logo).toString(), alt: '' })
+                  : h('span', { className: 'pv-sponsor-name' }, s.get('name') || 'Business name'),
+              ),
+            ),
+          )
+        },
+      })
+
       CMS.registerPreviewTemplate('news', NewsPreview)
       CMS.registerPreviewTemplate('shop', ShopPreview)
       CMS.registerPreviewTemplate('fixtures', FixturesPreview)
+      CMS.registerPreviewTemplate('sponsors', SponsorPreview)
 
       /* =====================================================================
          When an editor clicks "Add news item / product / game / size",

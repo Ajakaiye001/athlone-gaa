@@ -8,9 +8,15 @@ function load(modules) {
   return Object.values(modules).map((m) => m.default ?? m)
 }
 
+import settingsJson from '../content/settings.json'
+
+// Global site settings (O'Neills store link, etc.)
+export const settings = settingsJson
+
 const newsModules = import.meta.glob('../content/news/*.json', { eager: true })
 const shopModules = import.meta.glob('../content/shop/*.json', { eager: true })
 const fixtureModules = import.meta.glob('../content/fixtures/*.json', { eager: true })
+const sponsorModules = import.meta.glob('../content/sponsors/*.json', { eager: true })
 
 // News: newest first (parse the written date; fall back to editor order)
 export const news = load(newsModules).sort((a, b) => {
@@ -42,4 +48,13 @@ export const fixtures = load(fixtureModules).sort((a, b) => {
   const mb = MONTH_INDEX.indexOf(b.month)
   if (ma !== mb) return ma - mb
   return dayOf(a) - dayOf(b)
+})
+
+// Sponsors: principal first, then partners, then supporters, then editor order
+const TIER_ORDER = { principal: 0, partner: 1, supporter: 2 }
+export const sponsors = load(sponsorModules).sort((a, b) => {
+  const ta = TIER_ORDER[a.tier] ?? 9
+  const tb = TIER_ORDER[b.tier] ?? 9
+  if (ta !== tb) return ta - tb
+  return (a.order ?? 0) - (b.order ?? 0)
 })

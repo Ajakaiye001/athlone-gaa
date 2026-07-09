@@ -82,6 +82,7 @@ collections:
           - { label: 'Sliotar', value: 'sliotar' }
           - { label: 'Hurley', value: 'hurley' }
       - { name: 'badge', label: 'Corner badge', widget: 'string', required: false, hint: 'Short label like NEW SEASON or HAND MADE' }
+      - { name: 'link', label: "O'Neills product link", widget: 'string', required: false, hint: "Paste the O'Neills store URL for official kit. If set, the button becomes 'Buy on O'Neills' instead of the clubhouse kit bag" }
       - { name: 'desc', label: 'Description', widget: 'text' }
       - name: 'options'
         label: 'Sizes'
@@ -128,3 +129,41 @@ collections:
       - { name: 'venue', label: 'Venue', widget: 'string' }
       - { name: 'referee', label: 'Referee', widget: 'string', default: 'TBC' }
       - { name: 'order', label: 'Order', widget: 'hidden', required: false }
+
+  - name: 'sponsors'
+    label: 'Sponsors'
+    label_singular: 'sponsor'
+    description: 'Club sponsors shown on the home page. The principal sponsor gets the big board.'
+    folder: 'content/sponsors'
+    create: true
+    format: 'json'
+    extension: 'json'
+    identifier_field: 'name'
+    summary: '{{name}} — {{tier}}'
+    sortable_fields: ['tier', 'name']
+    view_groups:
+      - { label: 'Tier', field: 'tier' }
+    fields:
+      - { name: 'name', label: 'Business name', widget: 'string' }
+      - name: 'tier'
+        label: 'Tier'
+        widget: 'select'
+        hint: 'Principal is the headline sponsor (only pick one). Partners and supporters scroll on the boards.'
+        options:
+          - { label: 'Principal sponsor', value: 'principal' }
+          - { label: 'Partner', value: 'partner' }
+          - { label: 'Supporter', value: 'supporter' }
+      - { name: 'logo', label: 'Logo', widget: 'image', required: false, hint: 'Upload the logo. If empty, the business name is shown as text on the board' }
+      - { name: 'url', label: 'Website', widget: 'string', required: false, hint: 'Full link, e.g. https://example.ie. Leave blank if none' }
+      - { name: 'order', label: 'Order', widget: 'hidden', required: false }
+
+  - name: 'settings'
+    label: 'Site Settings'
+    description: 'One-off settings that apply across the whole site.'
+    files:
+      - name: 'store'
+        label: "Shop & O'Neills"
+        file: 'content/settings.json'
+        fields:
+          - { name: 'oneillsUrl', label: "O'Neills club store URL", widget: 'string', hint: "Your club's official store on oneills.com. Shown as the shop banner and used for official-kit buttons" }
+          - { name: 'oneillsNote', label: 'Store note', widget: 'string', required: false }
