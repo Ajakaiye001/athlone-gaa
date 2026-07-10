@@ -83,8 +83,8 @@ export default function Hero() {
             every generation of Athlone on the same grass.
           </p>
           <div className="hero-ctas">
-            <Link to="/fixtures" className="stamp stamp--leather">
-              Match Day <span className="stamp-arrow">→</span>
+            <Link to="/tickets" className="stamp stamp--leather">
+              Buy Tickets <span className="stamp-arrow">→</span>
             </Link>
             <Link to="/membership" className="stamp stamp--chalk">
               Join Us

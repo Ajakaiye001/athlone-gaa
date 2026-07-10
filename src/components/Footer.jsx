@@ -24,6 +24,7 @@ export default function Footer() {
             <Link to="/about">The Club</Link>
             <Link to="/teams">Teams</Link>
             <Link to="/fixtures">Fixtures &amp; Results</Link>
+            <Link to="/tickets">Tickets</Link>
             <Link to="/news">News</Link>
           </nav>
 

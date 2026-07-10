@@ -167,3 +167,6 @@ collections:
         fields:
           - { name: 'oneillsUrl', label: "O'Neills club store URL", widget: 'string', hint: "Your club's official store on oneills.com. Shown as the shop banner and used for official-kit buttons" }
           - { name: 'oneillsNote', label: 'Store note', widget: 'string', required: false }
+          - { name: 'ticketmasterUrl', label: 'Ticketmaster link', widget: 'string', required: false, hint: 'Where fans buy match tickets online' }
+          - { name: 'centraUrl', label: 'Centra store finder link', widget: 'string', required: false, hint: 'Store locator for in-person ticket sales' }
+          - { name: 'supervaluUrl', label: 'SuperValu store finder link', widget: 'string', required: false, hint: 'Store locator for in-person ticket sales' }

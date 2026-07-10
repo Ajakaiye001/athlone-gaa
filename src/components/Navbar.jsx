@@ -7,6 +7,7 @@ const LINKS = [
   { to: '/about', label: 'The Club' },
   { to: '/teams', label: 'Teams' },
   { to: '/fixtures', label: 'Fixtures' },
+  { to: '/tickets', label: 'Tickets' },
   { to: '/news', label: 'News' },
   { to: '/shop', label: 'Shop' },
 ]

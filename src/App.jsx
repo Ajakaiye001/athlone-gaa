@@ -10,6 +10,7 @@ import Teams from './pages/Teams.jsx'
 import About from './pages/About.jsx'
 import Membership from './pages/Membership.jsx'
 import Shop from './pages/Shop.jsx'
+import TicketsPage from './pages/Tickets.jsx'
 
 function ScrollToTop() {
   const { pathname } = useLocation()
@@ -27,6 +28,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/fixtures" element={<Fixtures />} />
+        <Route path="/tickets" element={<TicketsPage />} />
         <Route path="/news" element={<News />} />
         <Route path="/teams" element={<Teams />} />
         <Route path="/about" element={<About />} />

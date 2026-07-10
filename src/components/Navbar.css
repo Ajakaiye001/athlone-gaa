@@ -29,26 +29,34 @@
 .nav-links {
   display: flex;
   align-items: center;
-  gap: clamp(18px, 2.5vw, 40px);
+  gap: clamp(14px, 1.6vw, 26px);
 }
 
 .nav-link {
   position: relative;
   font-family: var(--font-mono);
   font-weight: 500;
-  font-size: 14px;
-  letter-spacing: 0.12em;
+  font-size: 13px;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   padding-block: 6px;
   display: inline-flex;
-  gap: 7px;
+  gap: 6px;
   align-items: baseline;
+  white-space: nowrap;
 }
 
 .nav-link-no {
   font-size: 10px;
   font-weight: 700;
   color: var(--leather);
+}
+
+/* the numbered prefix is decorative; drop it when links get tight */
+@media (max-width: 1360px) {
+  .nav-link-no {
+    display: none;
+  }
 }
 
 /* chalk-underline draw on hover */
@@ -116,7 +124,7 @@
   transform: translateY(-4.5px) rotate(-45deg);
 }
 
-@media (max-width: 1080px) {
+@media (max-width: 1200px) {
   .nav-burger {
     display: flex;
   }

@@ -1,0 +1,96 @@
+.tickets {
+  background: var(--navy);
+  color: var(--chalk);
+  padding-block: clamp(72px, 10vw, 130px);
+}
+
+.tickets .display {
+  font-size: clamp(2.8rem, 7vw, 6.5rem);
+  margin-top: 10px;
+}
+
+.tickets-lead {
+  margin-top: 18px;
+  max-width: 60ch;
+  font-size: clamp(15px, 1.2vw, 18px);
+  line-height: 1.6;
+  color: var(--chalk-dim);
+}
+
+.tickets-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(20px, 3vw, 32px);
+  margin-top: clamp(36px, 5vw, 64px);
+}
+
+.ticket-route {
+  position: relative;
+  border: 3px solid var(--chalk);
+  padding: clamp(24px, 3vw, 44px);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  background: oklch(0.19 0.04 262 / 0.4);
+}
+
+.ticket-route--store {
+  background: transparent;
+  border-color: oklch(0.97 0.006 130 / 0.4);
+}
+
+.ticket-route-no {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.16em;
+  color: var(--leather);
+}
+
+.ticket-route h3 {
+  font-size: clamp(1.8rem, 3.2vw, 2.8rem);
+  color: var(--chalk);
+}
+
+.ticket-route p {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--chalk-dim);
+  max-width: 42ch;
+}
+
+.ticket-route .stamp {
+  margin-top: 12px;
+}
+
+.ticket-store-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 12px;
+}
+
+.tickets-note {
+  margin-top: clamp(28px, 4vw, 44px);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  color: var(--chalk-dim);
+}
+
+.tickets-note a {
+  color: var(--leather);
+  border-bottom: 2px solid var(--leather);
+  padding-bottom: 1px;
+}
+
+.tickets-note a:hover {
+  color: var(--leather-bright);
+}
+
+@media (max-width: 760px) {
+  .tickets-grid {
+    grid-template-columns: 1fr;
+  }
+}
