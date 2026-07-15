@@ -7,7 +7,7 @@ Vite + React, no backend required. Content is managed through Decap CMS.
 
 ```bash
 npm install
-npm run dev          # site on http://localhost:5185
+npm run dev          # site on http://localhost:5190
 ```
 
 ## Edit content (news, shop, fixtures)
@@ -20,7 +20,7 @@ npm run dev          # terminal 1: the site
 npm run cms          # terminal 2: the CMS backend (git mode)
 ```
 
-Then open **http://localhost:5185/admin/index.html**. Each section has a
+Then open **http://localhost:5190/admin/index.html**. Each section has a
 "New ..." button that opens a blank form with a live preview.
 
 **Save vs Publish:** hitting **Save** stores the change as a draft on the
