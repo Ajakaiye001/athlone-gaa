@@ -2,6 +2,7 @@ import { useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import useReveal from '../hooks/useReveal.js'
 import Ticker from '../components/Ticker.jsx'
+import ProductArt from '../components/ProductArt.jsx'
 import './HowToPlay.css'
 
 const RULES = [
@@ -22,8 +23,8 @@ const RULES = [
     'Four steps max in the hand. Then kick it, hand-pass it, or solo: football, toe-tap it back to your hands; hurling, balance it on the bás.',
   ],
   [
-    'Football and hurling',
-    'Gaelic football is played with a round ball you catch and kick. Hurling swaps it for an ash hurley and a sliotar, the fastest field game in the world.',
+    'No offside',
+    'The game flows end to end with no offside line. A keeper can score from a long free; a corner back can end up in the square.',
   ],
   [
     'Sixty minutes of it',
@@ -31,10 +32,51 @@ const RULES = [
   ],
 ]
 
+const CODES = {
+  football: {
+    label: 'Gaelic Football',
+    over: 'Kick it over · +1',
+    goal: 'Bury it in the net · +3',
+    overVerdict: 'POINT! KICKED OVER THE BAR',
+    goalVerdict: 'GOAL! BURIED IN THE NET',
+  },
+  hurling: {
+    label: 'Hurling',
+    over: 'Puck it over · +1',
+    goal: 'Flick it to the net · +3',
+    overVerdict: 'POINT! PUCKED OVER THE BAR',
+    goalVerdict: 'GOAL! FLICKED TO THE NET',
+  },
+}
+
+const TWO_CODES = [
+  {
+    key: 'football',
+    art: 'football',
+    name: 'Gaelic Football',
+    lines: [
+      'A round ball, heavier than a soccer ball, that you catch, carry, kick and fist.',
+      'Score with either foot or a closed fist; the high catch is the game’s signature move.',
+      'If you can run and you can try, you can play. Most people start here.',
+    ],
+  },
+  {
+    key: 'hurling',
+    art: 'hurley',
+    name: 'Hurling',
+    lines: [
+      'An ash hurley (the camán) and a small stitched ball (the sliotar), struck from the hand or the ground.',
+      'The sliotar travels over 150 km/h; a good strike scores from 80 metres. Helmets are mandatory.',
+      'Three thousand years old and still the fastest field game in the world.',
+    ],
+  },
+]
+
 const GLOSSARY = [
   'SLIOTAR · THE SMALL LEATHER BALL USED IN HURLING',
   'CAMÁN · THE ASH HURLEY ITSELF',
   'BÁS · THE FLAT STRIKING FACE OF THE HURLEY',
+  'PUCK · TO STRIKE THE SLIOTAR; THE KEEPER RESTARTS WITH A PUCK-OUT',
   'SOLO · TOE-TAP OR HURLEY-BALANCE THE BALL BACK TO YOUR OWN HANDS',
   'THE SQUARE · THE KEEPER’S SMALL RECTANGLE, STAY OUT OF IT',
   '45 & 65 · LONG-RANGE FREES AFTER A DEFENDER PUTS IT WIDE',
@@ -45,6 +87,7 @@ const GLOSSARY = [
 
 export default function HowToPlay() {
   const ref = useReveal({ threshold: 0.12 })
+  const [code, setCode] = useState('football')
   const [goals, setGoals] = useState(0)
   const [points, setPoints] = useState(0)
   const [shot, setShot] = useState(null) // { kind: 'over' | 'goal', id }
@@ -60,10 +103,10 @@ export default function HowToPlay() {
     const land = () => {
       if (kind === 'over') {
         setPoints((p) => p + 1)
-        setVerdict('POINT! OVER THE BAR')
+        setVerdict(CODES[code].overVerdict)
       } else {
         setGoals((g) => g + 1)
-        setVerdict('GOAL! WORTH THREE')
+        setVerdict(CODES[code].goalVerdict)
       }
     }
     if (reduce) {
@@ -85,6 +128,17 @@ export default function HowToPlay() {
 
   const total = goals * 3 + points
 
+  // the sliotar is chalk-white with raised stitches; the football is leather
+  const Ball = ({ className }) =>
+    code === 'hurling' ? (
+      <g className={className}>
+        <circle className="h2p-sliotar" cx="62" cy="216" r="9" />
+        <path className="h2p-stitch" d="M56 210 C60 214 60 218 56 222 M68 210 C64 214 64 218 68 222" />
+      </g>
+    ) : (
+      <circle className={`h2p-football ${className || ''}`} cx="62" cy="214" r="11" />
+    )
+
   return (
     <section className="h2p grain" id="how-to-play" ref={ref}>
       <div className="container">
@@ -102,6 +156,24 @@ export default function HowToPlay() {
         <div className="h2p-grid">
           {/* interactive chalk goalposts */}
           <div className="h2p-stage reveal" style={{ '--reveal-delay': '0.2s' }}>
+            <div className="h2p-code-toggle" role="tablist" aria-label="Code">
+              {Object.entries(CODES).map(([key, c]) => (
+                <button
+                  key={key}
+                  role="tab"
+                  aria-selected={code === key}
+                  className={`h2p-code ${code === key ? 'is-active' : ''}`}
+                  onClick={() => {
+                    setCode(key)
+                    setShot(null)
+                    setVerdict(null)
+                  }}
+                >
+                  {c.label}
+                </button>
+              ))}
+            </div>
+
             <svg viewBox="0 0 400 260" className="h2p-pitch" aria-hidden>
               {/* ground */}
               <line x1="10" y1="232" x2="390" y2="232" />
@@ -121,24 +193,19 @@ export default function HowToPlay() {
                 <line x1="230" y1="130" x2="230" y2="232" />
               </g>
               {/* the ball */}
-              {shot && (
-                <circle
-                  key={shot.id}
-                  className={`h2p-ball h2p-ball--${shot.kind}`}
-                  cx="62"
-                  cy="214"
-                  r="11"
-                />
+              {shot ? (
+                <Ball key={shot.id} className={`h2p-ball h2p-ball--${shot.kind}`} />
+              ) : (
+                <Ball className="h2p-ball" />
               )}
-              {!shot && <circle className="h2p-ball" cx="62" cy="214" r="11" />}
             </svg>
 
             <div className="h2p-controls">
               <button className="stamp stamp--chalk" onClick={() => kick('over')}>
-                Kick it over · +1
+                {CODES[code].over}
               </button>
               <button className="stamp stamp--leather" onClick={() => kick('goal')}>
-                Bury it in the net · +3
+                {CODES[code].goal}
               </button>
             </div>
 
@@ -170,6 +237,29 @@ export default function HowToPlay() {
               </li>
             ))}
           </ol>
+        </div>
+
+        {/* the two codes, side by side */}
+        <div className="h2p-codes">
+          {TWO_CODES.map((c, i) => (
+            <article
+              className="h2p-codecard reveal"
+              style={{ '--reveal-delay': `${0.1 + i * 0.12}s` }}
+              key={c.key}
+            >
+              <div className="h2p-codecard-art">
+                <ProductArt kind={c.art} />
+              </div>
+              <div className="h2p-codecard-body">
+                <h3 className="display">{c.name}</h3>
+                <ul>
+                  {c.lines.map((line) => (
+                    <li key={line}>{line}</li>
+                  ))}
+                </ul>
+              </div>
+            </article>
+          ))}
         </div>
 
         <div className="h2p-ctas reveal">

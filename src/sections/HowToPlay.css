@@ -55,11 +55,72 @@
 }
 
 .h2p-ball {
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.h2p-football {
   fill: var(--leather);
   stroke: var(--chalk);
   stroke-width: 2;
-  transform-box: fill-box;
-  transform-origin: center;
+}
+
+.h2p-sliotar {
+  fill: var(--chalk);
+  stroke: var(--pitch-deep);
+  stroke-width: 2;
+}
+
+.h2p-stitch {
+  fill: none;
+  stroke: var(--pitch-deep);
+  stroke-width: 1.5;
+  stroke-linecap: round;
+}
+
+/* football / hurling switch */
+.h2p-code-toggle {
+  display: flex;
+  gap: 22px;
+  margin-bottom: 16px;
+}
+
+.h2p-code {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--chalk-dim);
+  padding-block: 6px;
+  position: relative;
+  transition: color var(--dur-hover) var(--ease-out);
+}
+
+.h2p-code::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  background: var(--leather);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.35s var(--ease-out);
+}
+
+.h2p-code:hover {
+  color: var(--chalk);
+}
+
+.h2p-code.is-active {
+  color: var(--leather);
+}
+
+.h2p-code.is-active::after {
+  transform: scaleX(1);
+  transform-origin: left;
 }
 
 .h2p-ball--over {
@@ -204,6 +265,72 @@
   max-width: 52ch;
 }
 
+/* ---------- the two codes ---------- */
+
+.h2p-codes {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(20px, 3vw, 32px);
+  margin-top: clamp(40px, 5vw, 72px);
+}
+
+.h2p-codecard {
+  display: grid;
+  grid-template-columns: minmax(110px, 150px) 1fr;
+  gap: clamp(18px, 2.4vw, 32px);
+  align-items: center;
+  border: 2px solid oklch(0.97 0.006 130 / 0.35);
+  padding: clamp(20px, 2.6vw, 36px);
+  transition: border-color 0.3s var(--ease-out);
+}
+
+.h2p-codecard:hover {
+  border-color: var(--leather);
+}
+
+.h2p-codecard-art {
+  color: var(--chalk);
+}
+
+.h2p-codecard-art .product-art {
+  max-width: 130px;
+}
+
+/* redraw the chalk on hover, same as the shop tiles */
+.h2p-codecard:hover .product-art path,
+.h2p-codecard:hover .product-art circle {
+  animation: chalk-redraw 1s var(--ease-out) both;
+}
+
+.h2p-codecard-body h3 {
+  font-size: clamp(1.5rem, 2.6vw, 2.2rem);
+  color: var(--chalk);
+}
+
+.h2p-codecard-body ul {
+  list-style: none;
+  margin-top: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.h2p-codecard-body li {
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--chalk-dim);
+  padding-left: 16px;
+  position: relative;
+}
+
+.h2p-codecard-body li::before {
+  content: '·';
+  position: absolute;
+  left: 0;
+  color: var(--leather);
+  font-weight: 700;
+}
+
 .h2p-ctas {
   display: flex;
   gap: 18px;
@@ -218,6 +345,21 @@
 
   .h2p-stage {
     position: static;
+  }
+
+  .h2p-codes {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .h2p-codecard {
+    grid-template-columns: 1fr;
+    justify-items: start;
+  }
+
+  .h2p-codecard-art .product-art {
+    max-width: 90px;
   }
 }
 
