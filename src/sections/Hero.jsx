@@ -73,7 +73,7 @@ export default function Hero() {
         </h1>
 
         <div className="hero-photo duotone reveal" style={{ '--reveal-delay': '0.45s' }}>
-          <img src="/assets/imgFrame1618868168.jpg" alt="A ball sitting in the grass under evening floodlights before training" />
+          <img src="/images/play-action.jpg" alt="An Athlone player rising highest to claim the ball" />
           <span className="hero-photo-caption">TRAINING GROUNDS · TUE &amp; THU · 19:30</span>
         </div>
 

@@ -1,0 +1,17 @@
+{
+  "name": "Ladies Jersey 2026",
+  "price": 65,
+  "image": "/images/ladies-jersey.jpg",
+  "category": "jerseys",
+  "art": "jersey",
+  "badge": "LGFA",
+  "link": "https://www.oneills.com/shop-by-team/gaa/athlone-gaa",
+  "desc": "The LGFA match jersey in the club hoops, fitted cut, made by O'Neills.",
+  "options": [
+    "8",
+    "10",
+    "12",
+    "14",
+    "16"
+  ]
+}

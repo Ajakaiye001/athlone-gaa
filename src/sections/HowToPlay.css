@@ -1,0 +1,229 @@
+/* GAA 101: a tactics chalkboard on pitch green */
+.h2p {
+  background:
+    radial-gradient(110% 100% at 50% 0%, oklch(0.34 0.08 152) 0%, var(--pitch) 55%, var(--pitch-deep) 100%);
+  color: var(--chalk);
+  padding-top: clamp(72px, 10vw, 130px);
+}
+
+.h2p .display {
+  font-size: clamp(2.4rem, 6.2vw, 5.8rem);
+  margin-top: 10px;
+  max-width: 18ch;
+}
+
+.h2p-lead {
+  margin-top: 18px;
+  max-width: 58ch;
+  font-size: clamp(15px, 1.2vw, 18px);
+  line-height: 1.6;
+  color: var(--chalk-dim);
+}
+
+.h2p-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 6fr) minmax(0, 6fr);
+  gap: clamp(32px, 5vw, 88px);
+  margin-top: clamp(36px, 5vw, 64px);
+  align-items: start;
+}
+
+/* ---------- the chalk goalposts ---------- */
+
+.h2p-stage {
+  position: sticky;
+  top: 24px;
+  border: 3px solid var(--chalk);
+  padding: clamp(16px, 2vw, 28px);
+  background: oklch(0.23 0.055 152 / 0.5);
+}
+
+.h2p-pitch {
+  width: 100%;
+  display: block;
+}
+
+.h2p-pitch line {
+  stroke: var(--chalk);
+  stroke-width: 3;
+  stroke-linecap: round;
+}
+
+.h2p-net line {
+  stroke-width: 1;
+  opacity: 0.4;
+}
+
+.h2p-ball {
+  fill: var(--leather);
+  stroke: var(--chalk);
+  stroke-width: 2;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.h2p-ball--over {
+  animation: h2p-over 0.75s cubic-bezier(0.3, 0.6, 0.4, 1) forwards;
+}
+
+.h2p-ball--goal {
+  animation: h2p-goal 0.55s cubic-bezier(0.2, 0.8, 0.5, 1) forwards;
+}
+
+@keyframes h2p-over {
+  0% {
+    transform: translate(0, 0);
+  }
+  55% {
+    transform: translate(85px, -175px) scale(0.8);
+  }
+  100% {
+    transform: translate(140px, -145px) scale(0.62);
+    opacity: 0;
+  }
+}
+
+@keyframes h2p-goal {
+  0% {
+    transform: translate(0, 0);
+  }
+  70% {
+    transform: translate(132px, -40px) scale(0.85);
+  }
+  100% {
+    transform: translate(146px, -34px) scale(0.8);
+    opacity: 0;
+  }
+}
+
+.h2p-controls {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: 18px;
+}
+
+.h2p-controls .stamp {
+  padding: 12px 18px;
+  font-size: 12px;
+}
+
+.h2p-board {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px solid oklch(0.97 0.006 130 / 0.25);
+  font-family: var(--font-mono);
+}
+
+.h2p-score {
+  font-weight: 700;
+  font-size: clamp(1.2rem, 2vw, 1.7rem);
+  letter-spacing: 0.08em;
+  font-variant-numeric: tabular-nums;
+}
+
+.h2p-total {
+  font-size: 14px;
+  color: var(--chalk-dim);
+  font-variant-numeric: tabular-nums;
+}
+
+.h2p-verdict {
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  color: var(--leather-bright);
+  animation: h2p-verdict-in 0.3s var(--ease-out);
+}
+
+@keyframes h2p-verdict-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.h2p-reset {
+  margin-left: auto;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  color: var(--chalk-dim);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.h2p-reset:hover {
+  color: var(--chalk);
+}
+
+/* ---------- the rules ---------- */
+
+.h2p-rules {
+  list-style: none;
+  border-top: 2px solid var(--chalk);
+}
+
+.h2p-rules li {
+  display: flex;
+  gap: 18px;
+  padding-block: clamp(14px, 1.8vw, 22px);
+  border-bottom: 1px solid oklch(0.97 0.006 130 / 0.2);
+}
+
+.h2p-rule-no {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 13px;
+  color: var(--leather);
+  padding-top: 3px;
+}
+
+.h2p-rules h3 {
+  font-family: var(--font-body);
+  font-weight: 800;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.h2p-rules p {
+  margin-top: 4px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--chalk-dim);
+  max-width: 52ch;
+}
+
+.h2p-ctas {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+  margin-block: clamp(32px, 4vw, 52px) clamp(48px, 6vw, 80px);
+}
+
+@media (max-width: 900px) {
+  .h2p-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .h2p-stage {
+    position: static;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .h2p-ball--over,
+  .h2p-ball--goal {
+    animation: none;
+  }
+}

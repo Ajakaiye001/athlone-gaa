@@ -26,7 +26,7 @@ export const teams = [
     name: 'Senior Football',
     blurb:
       'Our flagship men’s side competing in the Allianz Football League Roinn 3 and the senior championship.',
-    image: '/assets/imgFrame1618868199.jpg',
+    image: '/images/ball-carry.jpg',
     coach: 'Peter Scott',
     roster: [
       { no: 1, name: 'Dara Kilduff', pos: 'Goalkeeper' },
@@ -50,7 +50,7 @@ export const teams = [
     name: 'Senior Hurling',
     blurb:
       'Competing in the Allianz Hurling League Roinn 2, our hurlers carry the club’s proud tradition on the field.',
-    image: '/assets/imgFrame1618868206.jpg',
+    image: '/images/play-action.jpg',
     coach: 'Peter Scott',
     roster: [
       { no: 1, name: 'Oisín Creggy', pos: 'Goalkeeper' },
@@ -74,7 +74,7 @@ export const teams = [
     name: 'Ladies Football',
     blurb:
       'A fast-growing section of the club with squads competing at junior and intermediate level.',
-    image: '/assets/imgFrame1618868201.jpg',
+    image: '/images/ladies-team.jpg',
     coach: 'Sarah O’Connor',
     roster: [
       { no: 1, name: 'Aoibhinn Curley', pos: 'Goalkeeper' },
@@ -98,7 +98,7 @@ export const teams = [
     name: 'Junior & Reserves',
     blurb:
       'The heartbeat of the club: every adult member gets the chance to play competitive Gaelic games.',
-    image: '/assets/imgFrame1618868200.jpg',
+    image: '/images/u16-team.jpg',
     coach: 'Michael Walsh',
     roster: [
       { no: 1, name: 'Frank Mulvihill', pos: 'Goalkeeper' },
@@ -122,7 +122,7 @@ export const teams = [
     name: 'Juvenile Academy',
     blurb:
       'From nursery to minor, our academy develops skills, friendships and a lifelong love of the game.',
-    image: '/assets/imgFrame1618868204.jpg',
+    image: '/images/u15-team.jpg',
     coach: 'Fred O’Neil',
     roster: [
       { no: 1, name: 'Charlie Doran', pos: 'U15 · Goalkeeper' },
@@ -174,34 +174,34 @@ export const testimonials = [
       'Being part of this club has helped me grow in confidence and improve my skills. It really feels like a community.',
     name: 'Greg Eya',
     role: 'Youth Player',
-    image: '/assets/imgFrame1618868203.jpg',
+    image: '/images/u15-team.jpg',
   },
   {
     quote:
       'The coaches genuinely care about every child. My two kids count down the days to training each week.',
     name: 'Mary Duignan',
     role: 'Parent',
-    image: '/assets/imgFrame1618868207.jpg',
+    image: '/images/kids-camp.jpg',
   },
   {
     quote:
       'I joined without knowing anyone in Athlone. Within a month I had a full circle of friends for life.',
     name: 'Cathal Brennan',
     role: 'Junior Player',
-    image: '/assets/imgFrame1618868219.jpg',
+    image: '/images/ball-carry.jpg',
   },
   {
     quote:
       'Volunteering with the club is the most rewarding thing I do. The community spirit here is unmatched.',
     name: 'Aoife Kelly',
     role: 'Club Volunteer',
-    image: '/assets/imgFrame1618868220.jpg',
+    image: '/images/clubhouse.jpg',
   },
   {
     quote:
       'From the summer camp to county finals, the club gives our town something to be proud of all year round.',
     name: 'John Moran',
     role: 'Supporter',
-    image: '/assets/imgFrame1618868221.jpg',
+    image: '/images/ladies-team.jpg',
   },
 ]

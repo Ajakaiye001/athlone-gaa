@@ -1,6 +1,7 @@
 import Hero from '../sections/Hero.jsx'
 import AboutSection from '../sections/AboutSection.jsx'
 import FixturesBoard from '../sections/FixturesBoard.jsx'
+import HowToPlay from '../sections/HowToPlay.jsx'
 import Coaches from '../sections/Coaches.jsx'
 import SummerCamp from '../sections/SummerCamp.jsx'
 import Testimonials from '../sections/Testimonials.jsx'
@@ -15,6 +16,7 @@ export default function Home() {
       <Hero />
       <AboutSection />
       <FixturesBoard />
+      <HowToPlay />
       <Coaches />
       <SummerCamp />
       <Testimonials />

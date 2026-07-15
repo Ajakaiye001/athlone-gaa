@@ -31,6 +31,7 @@ export default function Footer() {
           <nav className="footer-col" aria-label="Get involved">
             <h4>Get Involved</h4>
             <Link to="/membership">Membership</Link>
+            <Link to="/#how-to-play">New to GAA?</Link>
             <Link to="/shop">Club Shop</Link>
             <Link to="/about#summer-camp">Summer Camp</Link>
             <Link to="/news">Club Lotto</Link>

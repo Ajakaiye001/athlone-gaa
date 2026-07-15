@@ -3,10 +3,10 @@ import useReveal from '../hooks/useReveal.js'
 import './SummerCamp.css'
 
 const SNAPS = [
-  { img: '/assets/imgFrame1618868203.jpg', label: 'CAMP JERSEY', rot: -3 },
-  { img: '/assets/imgFrame1618868204.jpg', label: 'DAILY COACHING', rot: 2 },
-  { img: '/assets/imgFrame1618868205.jpg', label: 'GAMES', rot: -2 },
-  { img: '/assets/imgFrame1618868206.jpg', label: 'FINAL DAY MEDALS', rot: 3 },
+  { img: '/images/kids-camp.jpg', label: 'THE CAMP CREW', rot: -3 },
+  { img: '/images/u15-training.jpg', label: 'GAMES ALL WEEK', rot: 2 },
+  { img: '/images/u15-team.jpg', label: 'TEAM SPIRIT', rot: -2 },
+  { img: '/images/home-jersey.jpg', label: 'CAMP JERSEY', rot: 3 },
 ]
 
 const LINES = [
