@@ -8,7 +8,13 @@ export default function PageHeader({ no = '00', kicker, title, lead }) {
 
   useEffect(() => {
     const id = requestAnimationFrame(() => setLoaded(true))
-    return () => cancelAnimationFrame(id)
+    // Failsafe: reveal even if rAF is throttled (tab backgrounded during the
+    // route change), so the page header never stays blank on navigation.
+    const failsafe = setTimeout(() => setLoaded(true), 500)
+    return () => {
+      cancelAnimationFrame(id)
+      clearTimeout(failsafe)
+    }
   }, [])
 
   return (

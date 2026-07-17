@@ -26,7 +26,12 @@ export default function Hero() {
 
   useEffect(() => {
     const id = requestAnimationFrame(() => setLoaded(true))
-    return () => cancelAnimationFrame(id)
+    // Failsafe so the hero can't stay hidden if rAF is throttled.
+    const failsafe = setTimeout(() => setLoaded(true), 500)
+    return () => {
+      cancelAnimationFrame(id)
+      clearTimeout(failsafe)
+    }
   }, [])
 
   // headline lags the scroll like a poster peeling off a wall
